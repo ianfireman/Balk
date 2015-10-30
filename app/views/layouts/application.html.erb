@@ -1,14 +1,113 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Workspace</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+    <link rel="shortcut icon" href="balk-icon.ico" type="image/x-icon" />
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Nobalk - Admin</title>
+
 </head>
+
 <body>
+    <div class="mainnav" id="navi">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand " href="#">
+                <img alt="Brand" src="http://www.jg3.com.py/jg3/img/empresa.png" width="45" height="45">
+              </a>
+            </div>
+            
+            
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> 
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    <!-- Dropdown do perfil do usario -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ian Fireman <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Perfil</a></li>
+                            <li><a href="#">Configurações</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Sair</a></li>
+                        </ul>
+                    </li>
+                    <!-- fim Dropdown do perfil do usario -->
+                </ul>
+            </div>
+          </div>
+        </nav>
+    </div>
+    
+    <div id="wrapper">
 
-<%= yield %>
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="../" id="logo_name">
+                        Black Rainbow
+                    </a>
+                </li>
+                <li>
+                    <a href="/empresas">
+                        <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> 
+                        Empresa
+                    </a>
+                </li>
+                <li>
+                    <a href="/clientes">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span> 
+                        Cliente
+                        </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> 
+                        Ajuda
+                        </a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="content-full-box"
+            <!-- /#sidebar-wrapper -->
+            <div class="menu-button">
+                <a class="toggle_btn" href="#menu-toggle" id="menu-toggle">
+                  <img border="0"  src="http://lartebiancobakery.com/ESW/Images/menu_icon.png" width="30" height="30">
+                </a>
+            </div>
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <%= yield %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /#page-content-wrapper -->
+        </div>
+    </div>
+    <!-- /#wrapper -->
 
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
 </body>
+
 </html>
+
