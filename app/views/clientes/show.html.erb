@@ -1,19 +1,22 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @cliente.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @cliente.email %>
-</p>
-
-<p>
-  <strong>Cnpj:</strong>
-  <%= @cliente.cnpj %>
-</p>
-
-<%= link_to 'Edit', edit_cliente_path(@cliente) %> |
-<%= link_to 'Back', clientes_path %>
+<div class="panel panel-default">
+  <div class="panel-heading" id="painel_list"><div class="text-center">Cliente<p id="notice"><%= notice %></p></div></div>
+    <div class="text-center">
+    <p>
+      <strong>Nome:</strong>
+      <%= @cliente.name %>
+    </p>
+    
+    <p>
+      <strong>Email:</strong>
+      <%= @cliente.email %>
+    </p>
+    
+    <p>
+      <strong>Cnpj:</strong>
+      <%= @cliente.cnpj %>
+    </p>
+    
+    <%= link_to 'Editar', edit_cliente_path(@cliente) %> |
+    <%= link_to 'Voltar', clientes_path %>
+  </div>
+</div>

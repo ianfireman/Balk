@@ -1,14 +1,17 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @empresa.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @empresa.email %>
-</p>
-
-<%= link_to 'Edit', edit_empresa_path(@empresa) %> |
-<%= link_to 'Back', empresas_path %>
+<div class="panel panel-default">
+  <div class="panel-heading" id="painel_list"><div class="text-center">Empresa<p id="notice"><%= notice %></p></div></div>
+    <div class="text-center">
+    <p>
+      <strong>Name:</strong>
+      <%= @empresa.name %>
+    </p>
+    
+    <p>
+      <strong>Email:</strong>
+      <%= @empresa.email %>
+    </p>
+    
+    <%= link_to 'Editar', edit_empresa_path(@empresa) %> |
+    <%= link_to 'Voltar', empresas_path %>
+  </div>
+</div>

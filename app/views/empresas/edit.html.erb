@@ -1,6 +1,9 @@
-<h1>Editing Empresa</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @empresa %> |
-<%= link_to 'Back', empresas_path %>
+<div class="panel panel-default">
+    <div class="panel-heading" id="painel_list"><div class="text-center">Editar Cliente</div></div>
+    <div class="text-center">
+        <%= render 'form' %>
+        
+        <%= link_to 'Pagina da Empresa', @empresa %> |
+        <%= link_to 'Voltar', empresas_path %>
+   </div>
+</div>
