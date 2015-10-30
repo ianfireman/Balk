@@ -1,24 +1,16 @@
+#Projeto: Balk
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+Time:
 
+>Abhner Fellipe Gomes de Araújo(afga) - Analista de Sistema
 
-Welcome to your Rails project on Cloud9 IDE!
+>Danilo Matheus de Oliveira Pedrosa(dmop) - Gerente de Projeto
 
-To get started, just do the following:
+>Ian Marino Lavenere Bastos Fireman(imlbf) - Líder de desenvolvimento
 
-1. Run the project with the "Run Project" button in the menu bar on top of the IDE.
-2. Preview your new app by clicking on the URL that appears in the Run panel below (https://nobalk-imlbf.c9.io/).
+Projeto destinado à desenvolver um software como serviço, voltado para auxiliar os processos pertinentes à representação comercial. Utilizaremos a metodologia ágil para desenvolver o projeto.
+Serviço final deve ser capaz de auxiliar o representante em no seu trabalho diário, alcançando o máximo de precessos possível relativos à comunicação e gerenciamento das vendas.
 
-Happy coding!
-The Cloud9 IDE team
+O desenvolvimento do serviço será em Ruby 2.1.
 
-
-## Support & Documentation
-
-Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
-To watch some training videos, visit http://www.youtube.com/user/c9ide
+Link do projeto no C9- https://balk-imlbf.c9.io/
