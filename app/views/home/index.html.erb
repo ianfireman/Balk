@@ -1,5 +1,101 @@
-<div class="jumbotron">
-  <h1>Black Rainbow Ltda</h1>
-   <p>Esperem pelo maior projeto de suas vidas</p>
-    <p>Tudo que voce conhece mudará para sempre</p>
-</div>
+<html lang="en">
+ <head>
+    <link rel="shortcut icon" href="balk-icon.ico" type="image/x-icon" />
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Nobalk - Admin</title>
+
+</head>
+<body>
+<div id="home_in" class="container">
+   <div class="row">
+    	 
+			<div class="col-md-6 col-md-offset-3">
+			 <div id="logo_home" class="text-center">
+     <h1><span class="label label-primary">NOBALK</span></h1>
+    </div>
+				<div class="panel panel-login">
+				 
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-xs-6">
+								<a href="#" class="active" id="login-form-link">Entrar</a>
+							</div>
+							<div class="col-xs-6">
+								<a href="#" id="register-form-link">Registrar</a>
+							</div>
+						</div>
+						<hr>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-lg-12">
+							 <!-- LOGIN FORM -->
+								 <div id="login-form">
+ 									<div class="form-group">
+ 										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Email" value="">
+ 									</div>
+ 									<div class="form-group">
+ 										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Senha">
+ 									</div>
+ 									<div class="form-group text-center">
+ 										<input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+ 										<label for="remember"> Lembrar email</label>
+ 									</div>
+ 									<div class="form-group">
+ 										<div class="row">
+ 											<div class="col-sm-6 col-sm-offset-3">
+ 											 <a name="login-submit" href="/admin"  id="login-submit" class="form-control btn btn-login" role="button">Entrar</a>
+ 											</div>
+ 										</div>
+ 									</div>
+ 									<div class="form-group">
+ 										<div class="row">
+ 											<div class="col-lg-12">
+ 												<div class="text-center">
+ 													<a href="/admin" tabindex="5" class="forgot-password">Esqueceu sua senha?</a>
+ 												</div>
+ 											</div>
+ 										</div>
+ 									</div>
+								</div>
+								<!-- LOGIN FORM END -->
+								
+								<!-- REGISTER FORM -->
+								<form id="register-form" action="http://phpoll.com/register/process" method="post" role="form" style="display: none;">
+									<div class="form-group">
+										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Nome" value="">
+									</div>
+									<div class="form-group">
+										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Endereço de Email" value="">
+									</div>
+									<div class="form-group">
+										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Senha">
+									</div>
+									<div class="form-group">
+										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirmar Senha">
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+											 <a type="submit" name="register-submit" href="admin" id="register-submit" tabindex="4" class="form-control btn btn-register"  role="button">Registrar</a>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>	
