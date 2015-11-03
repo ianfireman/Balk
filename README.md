@@ -13,4 +13,4 @@ Serviço final deve ser capaz de auxiliar o representante em no seu trabalho di�
 
 O desenvolvimento do serviço será em Ruby 2.1.
 
-Link do projeto no C9- https://balk-imlbf.c9.io/
+Link do projeto no heroku - http://floating-plains-2613.herokuapp.com/admin
