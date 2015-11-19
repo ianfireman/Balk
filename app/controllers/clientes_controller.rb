@@ -6,6 +6,7 @@ class ClientesController < ApplicationController
   def index
     @clientes = Cliente.all
   end
+  
 
   # GET /clientes/1
   # GET /clientes/1.json
@@ -28,7 +29,7 @@ class ClientesController < ApplicationController
 
     respond_to do |format|
       if @cliente.save
-        format.html { redirect_to @cliente, notice: 'Cliente was successfully created.' }
+        format.html { redirect_to @cliente, notice: 'Cliente criado com sucesso.' }
         format.json { render :show, status: :created, location: @cliente }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class ClientesController < ApplicationController
   def update
     respond_to do |format|
       if @cliente.update(cliente_params)
-        format.html { redirect_to @cliente, notice: 'Cliente was successfully updated.' }
+        format.html { redirect_to @cliente, notice: 'Cliente alterado com sucesso.' }
         format.json { render :show, status: :ok, location: @cliente }
       else
         format.html { render :edit }
@@ -56,7 +57,7 @@ class ClientesController < ApplicationController
   def destroy
     @cliente.destroy
     respond_to do |format|
-      format.html { redirect_to clientes_url, notice: 'Cliente was successfully destroyed.' }
+      format.html { redirect_to clientes_url, notice: 'Cliente removido com sucesso.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +70,6 @@ class ClientesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cliente_params
-      params.require(:cliente).permit(:name, :email, :cnpj)
+      params.require(:cliente).permit(:nome_fantasia, :email, :cnpj, :razao_soc, :inscricao_es, :nome_comprador, :nome_banco, :agencia, :conta_corrente)
     end
 end

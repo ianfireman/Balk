@@ -12,16 +12,41 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label "Nome Fantasia" %><br>
+    <%= f.text_field :nome_fantasia %>
   </div>
+  
   <div class="field">
-    <%= f.label :email %><br>
+    <%= f.label "Email" %><br>
     <%= f.text_field :email %>
   </div>
   <div class="field">
     <%= f.label :cnpj %><br>
     <%= f.number_field :cnpj %>
+  </div>
+  <div class="field">
+    <%= f.label "Razão Social" %><br>
+    <%= f.text_field :razao_soc %>
+  </div>
+  <div class="field">
+    <%= f.label "Inscrição Estadual" %><br>
+    <%= f.text_field :inscricao_es %>
+  </div>
+  <div class="field">
+    <%= f.label "Nome do Comprador" %><br>
+    <%= f.text_field :nome_comprador %>
+  </div>
+  <div class="field">
+    <%= f.label "Nome do Banco" %><br>
+    <%= f.text_field :nome_banco %>
+  </div>
+  <div class="field">
+    <%= f.label "Agência" %><br>
+    <%= f.text_field :agencia %>
+  </div>
+  <div class="field">
+    <%= f.label "Conta Corrente" %><br>
+    <%= f.text_field :conta_corrente %>
   </div>
   <div class="actions">
     <%= f.submit %>

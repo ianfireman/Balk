@@ -105,8 +105,13 @@
 }
 
 #logo_home{
-  padding-bottom: 4em;
+  padding-bottom: 6em;
+  padding-top: 4em;
   font-weight: bold;
+}
+
+#psize{
+	font-size:7em;
 }
 
 #register-submit{
@@ -119,4 +124,8 @@
   color: white;
   text-decoration: none; 
    background-color: none;
+}
+
+#body-page{
+	background-image: url("http://www.igrejavidaemcristo.com.br/site/images/background.jpg");	
 }

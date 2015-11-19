@@ -3,7 +3,7 @@
     <div class="text-center">
     <p>
       <strong>Nome:</strong>
-      <%= @cliente.name %>
+      <%= @cliente.nome_fantasia %>
     </p>
     
     <p>
@@ -14,6 +14,39 @@
     <p>
       <strong>Cnpj:</strong>
       <%= @cliente.cnpj %>
+    
+    </p>
+    
+     <p>
+      <strong>Razão Social:</strong>
+      <%= @cliente.razao_soc %>
+    </p>
+    
+    <p>
+      <strong>Inscrição Estadual:</strong>
+      <%= @cliente.inscricao_es %>
+    </p>
+    
+    <p>
+      <strong>Nome do Comprador:</strong>
+      <%= @cliente.nome_comprador %>
+    
+    </p>
+    
+     <p>
+      <strong>Nome do Banco:</strong>
+      <%= @cliente.nome_banco %>
+    </p>
+    
+    <p>
+      <strong>Agência:</strong>
+      <%= @cliente.agencia %>
+    </p>
+    
+    <p>
+      <strong>Conta Corrente:</strong>
+      <%= @cliente.conta_corrente %>
+    
     </p>
     
     <%= link_to 'Editar', edit_cliente_path(@cliente) %> |

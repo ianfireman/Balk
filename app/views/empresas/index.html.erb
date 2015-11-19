@@ -22,7 +22,7 @@
       <tbody>
         <% @empresas.each do |empresa| %>
           <tr>
-            <td><%= empresa.name %></td>
+            <td><%= empresa.nome_fantasia %></td>
             <td><%= empresa.email %></td>
             <td><%= link_to 'Mostrar', empresa %>
               <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>

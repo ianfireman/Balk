@@ -2,13 +2,23 @@
   <div class="panel-heading" id="painel_list"><div class="text-center">Empresa<p id="notice"><%= notice %></p></div></div>
     <div class="text-center">
     <p>
-      <strong>Name:</strong>
-      <%= @empresa.name %>
+      <strong>Nome Fantasia:</strong>
+      <%= @empresa.nome_fantasia %>
     </p>
     
     <p>
       <strong>Email:</strong>
       <%= @empresa.email %>
+    </p>
+    
+     <p>
+      <strong>Razão Social:</strong>
+      <%= @empresa.razao_soc %>
+    </p>
+    
+     <p>
+      <strong>Cnpj:</strong>
+      <%= @empresa.cnpj %>
     </p>
     
     <%= link_to 'Editar', edit_empresa_path(@empresa) %> |

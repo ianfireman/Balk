@@ -28,7 +28,7 @@ class EmpresasController < ApplicationController
 
     respond_to do |format|
       if @empresa.save
-        format.html { redirect_to @empresa, notice: 'Empresa was successfully created.' }
+        format.html { redirect_to @empresa, notice: 'Empresa criada com sucesso.' }
         format.json { render :show, status: :created, location: @empresa }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class EmpresasController < ApplicationController
   def update
     respond_to do |format|
       if @empresa.update(empresa_params)
-        format.html { redirect_to @empresa, notice: 'Empresa was successfully updated.' }
+        format.html { redirect_to @empresa, notice: 'Empresa alterada com sucesso.' }
         format.json { render :show, status: :ok, location: @empresa }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class EmpresasController < ApplicationController
   def destroy
     @empresa.destroy
     respond_to do |format|
-      format.html { redirect_to empresas_url, notice: 'Empresa was successfully destroyed.' }
+      format.html { redirect_to empresas_url, notice: 'Empresa removida com sucesso.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class EmpresasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def empresa_params
-      params.require(:empresa).permit(:name, :email)
+      params.require(:empresa).permit(:nome_fantasia, :email, :razao_soc, :cnpj)
     end
 end

@@ -12,12 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label "Nome Fantasia" %><br>
+    <%= f.text_field :nome_fantasia %>
   </div>
   <div class="field">
-    <%= f.label :email %><br>
+    <%= f.label "Email" %><br>
     <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label "Razão Social" %><br>
+    <%= f.text_field :razao_soc %>
+  </div>
+  <div class="field">
+    <%= f.label "Cnpj" %><br>
+    <%= f.text_field :cnpj %>
   </div>
   <div class="actions">
     <%= f.submit %>
