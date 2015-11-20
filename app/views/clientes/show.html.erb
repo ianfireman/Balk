@@ -1,55 +1,94 @@
 <div class="panel panel-default">
   <div class="panel-heading" id="painel_list"><div class="text-center">Cliente<p id="notice"><%= notice %></p></div></div>
-    <div class="text-center">
-    <p>
-      <strong>Nome:</strong>
-      <%= @cliente.nome_fantasia %>
-    </p>
-    
-    <p>
-      <strong>Email:</strong>
-      <%= @cliente.email %>
-    </p>
-    
-    <p>
-      <strong>Cnpj:</strong>
-      <%= @cliente.cnpj %>
-    
-    </p>
-    
-     <p>
-      <strong>Razão Social:</strong>
-      <%= @cliente.razao_soc %>
-    </p>
-    
-    <p>
-      <strong>Inscrição Estadual:</strong>
-      <%= @cliente.inscricao_es %>
-    </p>
-    
-    <p>
-      <strong>Nome do Comprador:</strong>
-      <%= @cliente.nome_comprador %>
-    
-    </p>
-    
-     <p>
-      <strong>Nome do Banco:</strong>
-      <%= @cliente.nome_banco %>
-    </p>
-    
-    <p>
-      <strong>Agência:</strong>
-      <%= @cliente.agencia %>
-    </p>
-    
-    <p>
-      <strong>Conta Corrente:</strong>
-      <%= @cliente.conta_corrente %>
-    
-    </p>
-    
-    <%= link_to 'Editar', edit_cliente_path(@cliente) %> |
-    <%= link_to 'Voltar', clientes_path %>
+    <div id="painel_body" class="paine-body">
+      
+      <div class="row">
+            <div class="col-md-6">
+              <strong>Nome Fantasia</strong>
+              <ul class="list-group">
+                <li class="list-group-item"><%= @cliente.nome_fantasia %></li>
+              </ul>
+            </div>
+            
+            <div class="col-md-6">
+              <strong>Cnpj</strong>
+              <ul class="list-group">
+                <li class="list-group-item"><%= @cliente.cnpj %></li>
+              </ul>
+            </div>
+      </div>
+      
+      <div class="row">
+            <div class="col-md-6">
+              <strong>Email</strong>
+              <ul class="list-group">
+                <li class="list-group-item"><%= @cliente.email %></li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <strong>Razão Social</strong>
+              <ul class="list-group">
+                <li class="list-group-item"><%= @cliente.razao_soc %></li>
+              </ul>
+            </div>
+      </div>
+      
+      <div class="row">
+            <div class="col-md-6">
+              <strong>Inscrição Estadual</strong>
+              <ul class="list-group">
+                <li class="list-group-item"><%= @cliente.inscricao_es %></li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <strong>Nome do Comprador</strong>
+              <ul class="list-group">
+                <li class="list-group-item"><%= @cliente.nome_comprador %></li>
+              </ul>
+            </div>
+      </div>
+      
+      <div class="row">
+            <div class="col-md-6">
+              <strong>Nome do Banco</strong>
+              <ul class="list-group">
+                <li class="list-group-item"><%= @cliente.nome_banco %></li>
+              </ul>
+            </div>
+            
+            <div class="col-md-6">
+              <strong>Agência</strong>
+              <ul class="list-group">
+                <li class="list-group-item"><%= @cliente.agencia %></li>
+              </ul>
+            </div>
+      </div>
+      
+      <div class="row">
+            <div class="col-md-6">
+              <strong>Conta Corrente</strong
+              <ul class="list-group">
+                <li class="list-group-item"><%= @cliente.conta_corrente %></li>
+              </ul>
+            </div>
+            
+            <div class="col-md-6">
+            </div>
+      </div>
+      <div class="text-center" id="buttons_show">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="pull-right">
+              <div class="text-center"> <%= link_to 'Editar', edit_cliente_path(@cliente), {:style=>'color:black;', :class => "btn btn-default"} %> </div>
+            </div>
+          </div>
+         
+          <div class="col-md-6">
+            <div class="pull-left">
+              <div class="text-center"> <%= link_to 'Voltar', clientes_path,  {:style=>'color:black;', :class => "btn btn-default"} %> </div>
+            </div>
+          </div>
+        </div>
+      </div>
   </div>
 </div>
