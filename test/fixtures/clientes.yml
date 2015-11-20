@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  nome_fantasia: MyString
   email: MyString
   cnpj: 1
 
 two:
-  name: MyString
+  nome_fantasia: MyString
   email: MyString
   cnpj: 1
