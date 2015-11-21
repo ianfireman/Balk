@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :clientes
   resources :empresas
   resources :home
+  resources :users
   
   root "home#index"
   get 'empresa' => 'empresas#index'

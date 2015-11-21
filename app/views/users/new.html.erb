@@ -69,28 +69,29 @@
 								<!-- LOGIN FORM END -->
 								
 								<!-- REGISTER FORM -->
-								<form id="register-form" action="http://phpoll.com/register/process" method="post" role="form">
-									<div class="form-group">
-										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Nome" value="">
+								<%= form_for(@user, :html => { :id => 'register-form'}) do |f| %>
+									<%= render 'shared/error_messages' %>
+						      <div class="form-group">
+										<%= f.text_field :name, :placeholder => "Nome", :class => "form-control", :id => "username"  %>
 									</div>
 									<div class="form-group">
-										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Endereço de Email" value="">
+										<%= f.email_field :email, :placeholder => "Endereço de Email", :class => "form-control", :id => "email"  %>
 									</div>
 									<div class="form-group">
-										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Senha">
+										<%= f.password_field :password, :placeholder => "Senha", :class => "form-control", :id => "password"  %>
 									</div>
 									<div class="form-group">
-										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirmar Senha">
+										<%= f.password_field :password_confirmation, :placeholder => "Confirmar Senha", :class => "form-control", :id => "confirm-password"  %>
 									</div>
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6 col-sm-offset-3">
-											 <a type="submit" name="register-submit" href="admin" id="register-submit" tabindex="4" class="form-control btn btn-register"  role="button">Registrar</a>
+											 <%= f.submit "Registrar", class: "form-control btn btn-register", id:"register-submit" %>
 											</div>
 										</div>
 									</div>
-								</form>
-							</div>
+						    <% end %>
+						  </div>
 						</div>
 					</div>
 				</div>
