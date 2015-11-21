@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
+  layout "formL"
   def index
-    render :layout => false
   end
   
   def admin
