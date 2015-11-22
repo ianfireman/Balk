@@ -9,16 +9,18 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
   
-  # Retorna o hash digest da string dada. Para test
-  def User.digest(string)
-    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-                                                  BCrypt::Engine.cost
-    BCrypt::Password.create(string, cost: cost)
-  end
-  
-  # Retorna um token aleatorio.
-  def User.new_token
-    SecureRandom.urlsafe_base64
+  class << self
+    # Retorna o hash digest da string dada. Para test
+    def digest(string)
+      cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                    BCrypt::Engine.cost
+      BCrypt::Password.create(string, cost: cost)
+    end
+    
+    # Retorna um token aleatorio.
+    def new_token
+      SecureRandom.urlsafe_base64
+    end
   end
   
   # Lembra de um usuário no banco de dados para uso em sessões persistentes
