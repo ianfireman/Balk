@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  qtd_itens: 1
+  preco_total: 1.5
+
+two:
+  qtd_itens: 1
+  preco_total: 1.5

@@ -1,1 +1,23 @@
-<%= @user.name %>, <%= @user.email %>
+<div class="panel panel-default">
+  <div class="panel-heading text-center">Perfil</div>
+  <div id="painel_body" class="paine-body">
+    <div class="row">
+            <div class="col-md-6">
+              <p><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <strong>Nome</strong></p>
+              
+              <ul class="list-group">
+                <li class="list-group-item"><%= @user.name %></li>
+              </ul>
+            </div>
+      </div>
+      
+      <div class="row">
+            <div class="col-md-6">
+              <p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <strong>Email</strong></p>
+              <ul class="list-group">
+                <li class="list-group-item"><%= @user.email %></li>
+              </ul>
+            </div>
+      </div>
+  </div>
+</div>
