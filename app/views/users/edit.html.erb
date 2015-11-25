@@ -1,0 +1,29 @@
+<div class="panel panel-default">
+  <div class="panel-heading text-center">Editar Perfil</div>
+  	<div id="painel_body" class="paine-body">
+			<div class="row">
+			  <div class="col-md-6 col-md-offset-3">
+			    <%= form_for(@user) do |f| %>
+			      <%= render 'shared/error_messages' %>
+			
+			       <p><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <strong>Nome</strong></p>
+			      <%= f.text_field :name, class: 'form-control' %>
+						<br>
+			      <p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <strong>Email</strong></p>
+			      <%= f.email_field :email, class: 'form-control' %>
+						<br>
+			      <p><span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span> <strong>Senha</strong></p>
+			      <%= f.password_field :password, class: 'form-control' %>
+						<br>
+			      <p><span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span> <strong>Confirmação da Senha</strong></p>
+			      <%= f.password_field :password_confirmation, class: 'form-control' %>
+						<br>
+			      <div class="center"><%= f.submit "Salvar Alteraçãoes", class: "btn btn-default" %></div>
+			    <% end %>
+
+			    
+			  </div>
+			</div>
+    </div>
+  </div>
+</div>
