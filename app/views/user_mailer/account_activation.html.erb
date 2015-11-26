@@ -1,0 +1,10 @@
+<h1>Nobalk</h1>
+
+<p>Olá <%= @user.name %>,</p>
+
+<p>
+Seja bem vindo ao Nobalk! Clique no link abaixo para ativar sua conta e começar a gerenciar suas vendas!
+</p>
+
+<%= link_to "Ativar", edit_account_activation_url(@user.activation_token,
+                                                    email: @user.email) %>

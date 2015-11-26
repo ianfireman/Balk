@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :empresas
   resources :home
   resources :users
+  resources :account_activations, only: [:edit]
   
   root "home#index"
   get 'empresa' => 'empresas#index'

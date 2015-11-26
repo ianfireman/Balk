@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151126040703) do
+ActiveRecord::Schema.define(version: 20151126054638) do
 
   create_table "clientes", force: :cascade do |t|
     t.string   "nome_fantasia"
@@ -25,11 +25,7 @@ ActiveRecord::Schema.define(version: 20151126040703) do
     t.string   "nome_banco"
     t.string   "agencia"
     t.string   "conta_corrente"
-    t.integer  "user_id"
   end
-
-  add_index "clientes", ["user_id", "created_at"], name: "index_clientes_on_user_id_and_created_at"
-  add_index "clientes", ["user_id"], name: "index_clientes_on_user_id"
 
   create_table "empresas", force: :cascade do |t|
     t.string   "nome_fantasia"
@@ -50,11 +46,14 @@ ActiveRecord::Schema.define(version: 20151126040703) do
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.string   "password_digest"
     t.string   "remember_digest"
-    t.boolean  "admin",           default: false
+    t.boolean  "admin",             default: false
+    t.string   "activation_digest"
+    t.boolean  "activated",         default: false
+    t.datetime "activated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
