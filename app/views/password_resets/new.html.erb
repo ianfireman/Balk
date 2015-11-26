@@ -1,0 +1,16 @@
+<h1 class ="text-center">Recuperar Senha</h1>
+<br>
+<% flash.each do |key, value| %>
+  <p class="alert alert-<%= key %>"><%= value %></p>
+<% end %>
+<%= form_for(:password_reset, url: password_resets_path) do |f| %>
+  <%= f.email_field :email, :placeholder => "Endereço de Email", :class => "form-control", :id => "email"  %>
+  <br>
+  <div class="form-group">
+	  <div class="row">
+  	  <div class="col-sm-6 col-sm-offset-3">
+        <%= f.submit "Enviar", :class => "form-control btn btn-login", :id => "login-submit" %>
+      </div>
+    </div>
+  </div>
+<% end %>

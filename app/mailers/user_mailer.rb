@@ -5,9 +5,8 @@ class UserMailer < ApplicationMailer
     mail to: user.email, subject: "Ativação da Conta Nobalk"
   end
 
-  def password_reset
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
+  def password_reset(user)
+    @user = user
+    mail to: user.email, subject: "Recuperar Senha Nobalk"
   end
 end

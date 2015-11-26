@@ -1,0 +1,17 @@
+<%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
+  <%= render 'shared/error_messages' %>
+
+  <%= hidden_field_tag :email, @user.email %>
+
+  <%= f.password_field :password, :placeholder => "Senha", :class => "form-control", :id => "password"  %>
+
+  <%= f.password_field :password_confirmation, :placeholder => "Confirmar Senha", :class => "form-control", :id => "password"  %>
+  
+  <div class="form-group">
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+        <%= f.submit "Alterar Senha", :class => "form-control btn btn-login", :id => "login-submit"  %>
+ 			</div>
+   	</div>
+ 	</div>
+<% end %>
