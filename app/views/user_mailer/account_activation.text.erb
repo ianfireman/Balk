@@ -2,6 +2,6 @@ Olá <%= @user.name %>,
 
 Seja bem vindo ao Nobalk! Clique no link abaixo para ativar sua conta e começar a gerenciar suas vendas!
 
-<%= @user.right_url(edit_account_activation_url(@user.activation_token, email: @user.email)) %>
+<%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
 
 Caso voce não tenha criado nenhuma conta apenas ignore esse email.

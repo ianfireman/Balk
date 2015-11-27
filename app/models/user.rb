@@ -70,13 +70,6 @@ class User < ActiveRecord::Base
     reset_sent_at < 2.hours.ago
   end
   
-  # Retorna o link certo para da ativação
-  def right_url(wrong_link)
-    urlStr = wrong_link
-    urlStr = urlStr[24..-1]
-    urlStr = "https://nobalk" + urlStr
-  end
-  
   private
 
     # Converte o email para minusculo
