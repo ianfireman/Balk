@@ -74,7 +74,7 @@ class User < ActiveRecord::Base
   def right_url(wrong_link)
     urlStr = wrong_link
     urlStr = urlStr[24..-1]
-    urlStr = "https://floating-plains-2613" + urlStr
+    urlStr = "https://nobalk" + urlStr
   end
   
   private
