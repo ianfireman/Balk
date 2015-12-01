@@ -50,15 +50,6 @@ class UsersController < ApplicationController
     end
     
     # Before filters
-
-    # Confirma um usuario logado
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "Você não esta Logado."
-        redirect_to login_url
-      end
-    end
     
     # Confirmar se o usuario é o certo
     def correct_user

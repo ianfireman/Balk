@@ -77,4 +77,12 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.authenticated?(:remember, '')
   end
   
+  test "associated empresas should be destroyed" do
+    @user.save
+    @user.empresas.create!(nome_fantasia: 'Loja')
+    assert_difference 'Empresa.count', -1 do
+      @user.destroy
+    end
+  end
+  
 end

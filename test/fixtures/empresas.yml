@@ -1,8 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+Empresa_um:
+  nome_fantasia: Nome
+  email: email@email.com
+  
 one:
   nome_fantasia: MyString
   email: MyString
+  
 
 two:
   nome_fantasia: MyString
