@@ -2,7 +2,10 @@ require 'test_helper'
 
 class ClientesControllerTest < ActionController::TestCase
   setup do
+    @empresa = empresas(:one)
     @cliente = clientes(:one)
+    @cliente.empresa_id = @empresa.id
+    @cliente.save
   end
 
   test "should get index" do
@@ -18,7 +21,7 @@ class ClientesControllerTest < ActionController::TestCase
 
   test "should create cliente" do
     assert_difference('Cliente.count') do
-      post :create, cliente: { cnpj: @cliente.cnpj, email: @cliente.email, name: @cliente.nome_fantasia, razao: @cliente.razao_soc, inscricao: @cliente.inscricao_es, nome_comprador: @cliente.nome_comprador, nome_banco: @cliente.nome_banco, agencia: @cliente.agencia, conta_corrente: @cliente.conta_corrente }
+      post :create, cliente: {cnpj: @cliente.cnpj, email: @cliente.email, name: @cliente.nome_fantasia, razao: @cliente.razao_soc, inscricao: @cliente.inscricao_es, nome_comprador: @cliente.nome_comprador, nome_banco: @cliente.nome_banco, agencia: @cliente.agencia, conta_corrente: @cliente.conta_corrente }
     end
 
     assert_redirected_to cliente_path(assigns(:cliente))

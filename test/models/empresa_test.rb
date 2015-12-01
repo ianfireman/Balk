@@ -26,4 +26,12 @@ class EmpresaTest < ActiveSupport::TestCase
     assert_not @empresa.valid?
   end
   
+  test "associated clientes should be destroyed" do
+    @empresa.save
+    @empresa.clientes.create!(nome_fantasia: "Loja")
+    assert_difference 'Cliente.count', -1 do
+      @empresa.destroy
+    end
+  end
+  
 end

@@ -3,9 +3,3 @@
 one:
   nome_fantasia: MyString
   email: MyString
-  cnpj: 1
-
-two:
-  nome_fantasia: MyString
-  email: MyString
-  cnpj: 1

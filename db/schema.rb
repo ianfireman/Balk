@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151127215656) do
+ActiveRecord::Schema.define(version: 20151201202041) do
 
   create_table "clientes", force: :cascade do |t|
     t.string   "nome_fantasia"
@@ -25,7 +25,12 @@ ActiveRecord::Schema.define(version: 20151127215656) do
     t.string   "nome_banco"
     t.string   "agencia"
     t.string   "conta_corrente"
+    t.integer  "empresa_id"
   end
+
+  add_index "clientes", ["created_at"], name: "index_clientes_on_user_id_and_empresa_id_and_created_at"
+  add_index "clientes", ["empresa_id", "created_at"], name: "index_clientes_on_empresa_id_and_created_at"
+  add_index "clientes", ["empresa_id"], name: "index_clientes_on_empresa_id"
 
   create_table "empresas", force: :cascade do |t|
     t.string   "nome_fantasia"
