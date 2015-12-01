@@ -170,3 +170,35 @@
 #buttons_show{
     padding-top: 10px;
 }
+
+.dropdown a{
+    color: #FFFFFF !important;
+    
+}
+
+.dropdown-toggle a{
+    padding-top:10px;
+}
+
+.dropdown-menu a{
+    color: black !important;
+}
+
+.inset-text-effect {
+  margin-top: 18px;
+  margin-right: 16px;
+  margin-left: 18px;
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+  font: normal 25px/0 "actor", Helvetica, sans-serif;
+  color: hsl(0, 0%, 83%);
+  text-align: center;
+  text-transform: normal;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  white-space: pre;
+  text-shadow: 1px 1px 0 rgba(140,140,140,0.6) , -1px -1px 1px rgba(0,0,0,0.67) ;
+}
