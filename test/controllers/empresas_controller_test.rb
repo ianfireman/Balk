@@ -5,6 +5,8 @@ class EmpresasControllerTest < ActionController::TestCase
     @user = users(:carlos)
     @empresa = empresas(:one)
     @empresa.user_id = @user.id
+    @user.active_empresa = @empresa.id
+    @user.save
     @empresa.save
   end
 

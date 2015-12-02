@@ -22,6 +22,12 @@ class EmpresasController < ApplicationController
   # GET /empresas/1/edit
   def edit
   end
+  
+  def active
+    @empresaN = Empresa.find(params[:empresaN])
+    active_emp(@empresaN.id)
+    redirect_to empresas_url
+  end
 
   # POST /empresas
   # POST /empresas.json

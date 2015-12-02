@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   
   root "home#index"
   get 'empresa' => 'empresas#index'
+  get 'active' => 'empresas#active'
   get 'clientes' => 'clientes#index'
   get 'signup'  => 'users#new'
   get    'login'   => 'sessions#new'

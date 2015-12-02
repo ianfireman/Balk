@@ -21,6 +21,7 @@
       <%= @empresa.cnpj %>
     </p>
     
+    <%= link_to "Ativar", {:controller => "empresas", :action => "active", :empresaN => @empresa }%>
     <%= link_to 'Editar', edit_empresa_path(@empresa) %> |
     <%= link_to 'Voltar', empresas_path %>
   </div>

@@ -42,6 +42,9 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     # Valid activation token
     get edit_account_activation_path(user.activation_token, email: user.email)
     assert user.reload.activated?
+    @empresa = empresas(:one)
+    user.active_empresa = @empresa.id
+    user.save
     follow_redirect!
     assert_template 'users/show'
     assert is_logged_in?

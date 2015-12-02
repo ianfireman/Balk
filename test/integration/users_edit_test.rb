@@ -4,6 +4,9 @@ class UsersEditTest < ActionDispatch::IntegrationTest
 
   def setup
     @user = users(:carlos)
+    @empresa = empresas(:one)
+    @user.active_empresa = @empresa.id
+    @user.save
   end
 
   test "unsuccessful edit" do

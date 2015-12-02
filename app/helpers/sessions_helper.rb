@@ -4,6 +4,14 @@ module SessionsHelper
     session[:user_id] = user.id
   end
   
+  def active_emp(empresa_id)
+    current_user.update_attributes(:active_empresa => empresa_id)
+  end
+  
+  def current_empresa
+    @current_empresa = Empresa.find_by(id: current_user.active_empresa)
+  end
+  
   # Lembra o usuario em sessao persistente.
   def remember(user)
     user.remember
