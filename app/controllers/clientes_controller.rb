@@ -74,7 +74,7 @@ class ClientesController < ApplicationController
     end
     
     def correct_empresa
-      @empresa = current_user.empresas.find_by(id: current_empresa.id)
-      redirect_to clientes_url if @empresa.nil?
+      @cliente = current_empresa.clientes.find_by(id: params[:id])
+      redirect_to clientes_url if @cliente.nil?
     end
 end
