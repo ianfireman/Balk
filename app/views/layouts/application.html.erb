@@ -62,17 +62,30 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="../" id="logo_name">
-                        <%= current_empresa.nome_fantasia %>
-                    </a>
+                <li class="sessao_empresa">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-danger btn-lg sessao_empresaTex"><%= current_empresa.nome_fantasia %></button>
+                      <button type="button" class="btn btn-danger dropdown-toggle btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                      </ul>
+                    </div>
                 </li>
+                
                 <li>
                     <a href="/admin">
                         <span class="glyphicon glyphicon-home" aria-hidden="true"></span> 
                         Inicio
                     </a>
                 </li>
+                
                 <li>
                     <a href="/empresas">
                         <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> 
