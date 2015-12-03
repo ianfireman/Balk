@@ -64,16 +64,19 @@
             <ul class="sidebar-nav">
                 <li class="sessao_empresa cas">
                     <div class="btn-group">
-                      <%= link_to current_empresa.nome_fantasia, empresas_url, { :class => "btn btn-danger btn-lg sessao_empresaTex", :type => 'button'} %>
-                      <button type="button" class="btn btn-danger dropdown-toggle btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="caret"></span>
-                        <span class="sr-only">Toggle Dropdown</span>
-                      </button>
-                      <ul class="dropdown-menu">
-                        <% empresas_Existentes.each do |empresa| %>
-                            <li><%= link_to empresa.nome_fantasia, {:controller => "empresas", :action => "active", :empresaN => empresa }%></li>
-                            
+                        <% if empresa_ativa? %>
+                            <%= link_to current_empresa.nome_fantasia, empresas_url, { :class => "btn btn-danger btn-lg sessao_empresaTex", :type => 'button'} %>
+                        <% else %>
+                            <%= link_to 'NOBALK', empresas_url, { :class => "btn btn-danger btn-lg sessao_empresaTex", :type => 'button'} %>
                         <% end %>
+                        <button type="button" class="btn btn-danger dropdown-toggle btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <% empresas_Existentes.each do |empresa| %>
+                                <li><%= link_to empresa.nome_fantasia, {:controller => "empresas", :action => "active", :empresaN => empresa }%></li>
+                            <% end %>
                       </ul>
                     </div>
                 </li>

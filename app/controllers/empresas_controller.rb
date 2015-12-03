@@ -26,7 +26,7 @@ class EmpresasController < ApplicationController
   def active
     @empresaN = Empresa.find(params[:empresaN])
     active_emp(@empresaN.id)
-    redirect_to empresas_url
+    redirect_to clientes_url
   end
 
   # POST /empresas
