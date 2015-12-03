@@ -62,19 +62,18 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li class="sessao_empresa">
+                <li class="sessao_empresa cas">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-danger btn-lg sessao_empresaTex"><%= current_empresa.nome_fantasia %></button>
+                      <%= link_to current_empresa.nome_fantasia, empresas_url, { :class => "btn btn-danger btn-lg sessao_empresaTex", :type => 'button'} %>
                       <button type="button" class="btn btn-danger dropdown-toggle btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="caret"></span>
                         <span class="sr-only">Toggle Dropdown</span>
                       </button>
                       <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
+                        <% empresas_Existentes.each do |empresa| %>
+                            <li><%= link_to empresa.nome_fantasia, {:controller => "empresas", :action => "active", :empresaN => empresa }%></li>
+                            
+                        <% end %>
                       </ul>
                     </div>
                 </li>

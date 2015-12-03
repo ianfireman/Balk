@@ -66,12 +66,23 @@
     line-height: 40px;
 }
 
-.sidebar-nav li a { //Linha separando os botoes do menu
+.sidebar-nav li:not(:first-child) a { //Linha separando os botoes do menu
     display: block;
     box-shadow: inset 0px 1px 0px #000;
     text-decoration: none;
     color: #fff;
 }
+
+.sidebar-nav li a { //Linha separando os botoes do menu
+    color: #fff;
+}
+
+.cas li a { //Linha separando os botoes do selecionar empresa
+    display: block;
+    box-shadow: inset 0px 0px 0px #000;
+    text-decoration: none;
+}
+
 
 .sidebar-nav li a:hover {
     text-decoration: none;
@@ -173,7 +184,6 @@
 
 .dropdown a{
     color: #FFFFFF !important;
-    
 }
 
 .dropdown-toggle a{
@@ -213,5 +223,5 @@
 }
 
 .sessao_empresaTex {
-    width: 160px !important;
+    width: 155px !important;
 }
