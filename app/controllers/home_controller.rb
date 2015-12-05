@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
-  layout "formL"
+  layout "formL", except: [:admin]
+  
   def index
   end
   

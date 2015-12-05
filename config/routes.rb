@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :password_resets,     only: [:new, :create, :edit, :update]
   
   root "home#index"
+  
+  get 'admin' => 'home#admin'
   get 'empresa' => 'empresas#index'
   get 'active' => 'empresas#active'
   get 'clientes' => 'clientes#index'
