@@ -11,14 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label "Quantidade de Itens" %><br>
-    <%= f.number_field :qtd_itens %>
-  </div>
-  <div class="field">
-    <%= f.label "Preço Total" %><br>
-    <%= f.text_field :preco_total %>
-  </div>
+      <div class="col-md-6">
+              <strong>Quantidade de Itens</strong>
+                 <%= f.number_field :qtd_itens, :class => 'form-control' %>
+
+            </div>
+            <div class="col-md-6">
+              <strong>Preço Total</strong>
+                    <%= f.text_field :preco_total,:class => 'form-control' %>
+              </ul>
+            </div>
+      </div>
+      <p></p>
+
   <div class="actions">
     <%= f.submit %>
   </div>

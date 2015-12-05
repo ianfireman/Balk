@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 20151201214136) do
     t.integer  "empresa_id"
   end
 
-  add_index "clientes", ["created_at"], name: "index_clientes_on_user_id_and_empresa_id_and_created_at"
   add_index "clientes", ["empresa_id", "created_at"], name: "index_clientes_on_empresa_id_and_created_at"
   add_index "clientes", ["empresa_id"], name: "index_clientes_on_empresa_id"
 
