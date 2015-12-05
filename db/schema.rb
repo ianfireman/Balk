@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151201214136) do
+ActiveRecord::Schema.define(version: 20151205065432) do
 
   create_table "clientes", force: :cascade do |t|
     t.string   "nome_fantasia"
@@ -27,9 +27,32 @@ ActiveRecord::Schema.define(version: 20151201214136) do
     t.string   "conta_corrente"
     t.integer  "empresa_id"
   end
+
   add_index "clientes", ["created_at"], name: "index_clientes_on_user_id_and_empresa_id_and_created_at"
   add_index "clientes", ["empresa_id", "created_at"], name: "index_clientes_on_empresa_id_and_created_at"
   add_index "clientes", ["empresa_id"], name: "index_clientes_on_empresa_id"
+
+  create_table "colections", force: :cascade do |t|
+    t.string   "name"
+    t.date     "data_inicio"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+  end
+
+  add_index "colections", ["user_id", "created_at"], name: "index_colections_on_user_id_and_created_at"
+  add_index "colections", ["user_id"], name: "index_colections_on_user_id"
+
+  create_table "collections", force: :cascade do |t|
+    t.string   "name"
+    t.date     "data_inicio"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "empresa_id"
+  end
+
+  add_index "collections", ["empresa_id", "created_at"], name: "index_collections_on_empresa_id_and_created_at"
+  add_index "collections", ["empresa_id"], name: "index_collections_on_empresa_id"
 
   create_table "empresas", force: :cascade do |t|
     t.string   "nome_fantasia"

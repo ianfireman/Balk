@@ -34,4 +34,12 @@ class EmpresaTest < ActiveSupport::TestCase
     end
   end
   
+  test "associated collections should be destroyed" do
+    @empresa.save
+    @empresa.collections.create!(name: "verao")
+    assert_difference 'Collection.count', -1 do
+      @empresa.destroy
+    end
+  end
+  
 end

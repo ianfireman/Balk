@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+  <div class="panel-heading" id="painel_list"><div class="text-center">Coleção<p id="notice"><%= notice %></p></div></div>
+    <div class="text-center">
+      <p>
+        <strong>Nome:</strong>
+        <%= @collection.name %>
+      </p>
+      
+      <p>
+        <strong>Data inicio:</strong>
+        <%= @collection.data_inicio %>
+      </p>
+      
+      <%= link_to 'Editar', edit_collection_path(@collection) %> |
+      <%= link_to 'Voltar', collections_path %>
+  </div>
+</div>
