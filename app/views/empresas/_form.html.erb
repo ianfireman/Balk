@@ -11,23 +11,33 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label "Nome Fantasia" %><br>
-    <%= f.text_field :nome_fantasia %>
+      <div class="row" style="padding:10px","margin:20px">
+            <div class="col-md-6">
+              <strong>Nome Fantasia</strong>
+                 <%= f.text_field :nome_fantasia, :class => 'form-control' %>
+
+            </div>
+            <div class="col-md-6">
+              <strong>Email</strong>
+                    <%= f.text_field :email,:class => 'form-control' %>
+              </ul>
+            </div>
+      </div> 
+      
+      <div class="row" style="padding:10px","margin:20px">
+            <div class="col-md-6">
+              <strong>CNPJ</strong>
+                     <%= f.number_field :cnpj, :class => 'form-control' %>
+
+            </div>
+            <div class="col-md-6">
+              <strong>Razão Social</strong>
+                    <%= f.text_field :razao_soc,:class => 'form-control' %>
+              </ul>
+            </div>
+      </div>
   </div>
-  <div class="field">
-    <%= f.label "Email" %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label "Razão Social" %><br>
-    <%= f.text_field :razao_soc %>
-  </div>
-  <div class="field">
-    <%= f.label "Cnpj" %><br>
-    <%= f.text_field :cnpj %>
-  </div>
-  <div class="actions">
+  <div class="actions" align="center" style="padding:25px","margin:20px">
     <%= f.submit %>
   </div>
 <% end %>

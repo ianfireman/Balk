@@ -11,12 +11,12 @@
     </div>
   <% end %>
 
-      <div class="col-md-6">
+      <div class="col-md-6" style="padding:10px","margin:20px">
               <strong>Quantidade de Itens</strong>
                  <%= f.number_field :qtd_itens, :class => 'form-control' %>
 
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6" style="padding:10px","margin:20px">
               <strong>Preço Total</strong>
                     <%= f.text_field :preco_total,:class => 'form-control' %>
               </ul>
@@ -24,7 +24,7 @@
       </div>
       <p></p>
 
-  <div class="actions">
+  <div class="actions" align="center" style="padding:25px","margin:20px">
     <%= f.submit %>
   </div>
 <% end %>
