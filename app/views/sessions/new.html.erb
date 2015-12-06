@@ -12,7 +12,7 @@
   <div class="form-group">
       <%= f.label :remember_me, class: "checkbox inline" do %>
         <%= f.check_box :remember_me %>
-        <span>Lembrar conta nesse computador.</span>
+        <span>Lembrar dados nesse computador.</span>
       <% end %>
   </div>
   <div class="form-group">
@@ -26,8 +26,8 @@
  	  <div class="row">
  			<div class="col-lg-12">
  				<div class="text-center">
- 				  <p>Não tem conta? <%= link_to "Registrar!", signup_path %></p>
- 				  <%= link_to "Esqueceu sua senha?", new_password_reset_path %>
+ 				  <p>Não possui uma conta? <%= link_to "Registrar!", signup_path,style:"background-color:transparent" %></p>
+ 				  <%= link_to "Esqueceu sua senha?", new_password_reset_path,style:"background-color:transparent" %>
  				</div>
  			</div>
  		</div>
