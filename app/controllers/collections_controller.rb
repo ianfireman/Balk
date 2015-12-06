@@ -2,7 +2,8 @@ class CollectionsController < ApplicationController
   before_action :set_collection, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_user, only: [:update, :show, :index, :create, :destroy]
   before_action :correct_empresa, only: [:show, :update, :destroy]
-
+  before_action :empresa_ativa
+  
   # GET /collections
   # GET /collections.json
   def index
@@ -67,6 +68,10 @@ class CollectionsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_collection
       @collection = Collection.find(params[:id])
+    end
+    
+    def empresa_ativa
+      current_user.active_empresa > 0 ? true : (redirect_to admin_path, notice: 'Por favor ative alguma empresa.')
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -1,0 +1,28 @@
+<div class="panel panel-default">
+    <div class="panel-heading" id="painel_list"><div class="text-center">Produto</div></div>
+    <div class="text-center">
+      
+      <p>
+        <strong>Name:</strong>
+        <%= @item.name %>
+      </p>
+      
+      <p>
+        <strong>Referencia:</strong>
+        <%= @item.referencia %>
+      </p>
+      
+      <p>
+        <strong>Preco unitario:</strong>
+        <%= @item.preco_unitario %>
+      </p>
+      
+      <p>
+        <strong>Info:</strong>
+        <%= @item.info %>
+      </p>
+      
+      <%= link_to 'Edit', edit_item_path(@item) %> |
+      <%= link_to 'Back', items_path %>
+  </div>
+</div>

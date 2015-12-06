@@ -2,6 +2,8 @@ class ClientesController < ApplicationController
   before_action :set_cliente, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_user, only: [:update, :show, :index, :create, :destroy]
   before_action :correct_empresa, only: [:show, :update, :destroy]
+  before_action :empresa_ativa
+  
   # GET /clientes
   # GET /clientes.json
   def index
@@ -71,6 +73,10 @@ class ClientesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def cliente_params
       params.require(:cliente).permit(:nome_fantasia, :email, :cnpj, :razao_soc, :inscricao_es, :nome_comprador, :nome_banco, :agencia, :conta_corrente)
+    end
+    
+    def empresa_ativa
+      current_user.active_empresa > 0 ? true : (redirect_to admin_path, notice: 'Por favor ative alguma empresa.')
     end
     
     def correct_empresa

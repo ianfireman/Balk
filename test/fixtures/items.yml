@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  referencia: MyString
+  preco_unitario: 1.5
+  info: MyString
+
+two:
+  name: MyString
+  referencia: MyString2
+  preco_unitario: 1.5
+  info: MyString

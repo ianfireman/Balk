@@ -19,6 +19,7 @@ class CollectionsControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
+    log_in_as(users(:carlos))
     get :new
     assert_response :success
   end

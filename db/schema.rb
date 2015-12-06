@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151205065432) do
+ActiveRecord::Schema.define(version: 20151205193146) do
 
   create_table "clientes", force: :cascade do |t|
     t.string   "nome_fantasia"
@@ -28,8 +28,20 @@ ActiveRecord::Schema.define(version: 20151205065432) do
     t.integer  "empresa_id"
   end
 
+  add_index "clientes", ["created_at"], name: "index_clientes_on_user_id_and_empresa_id_and_created_at"
   add_index "clientes", ["empresa_id", "created_at"], name: "index_clientes_on_empresa_id_and_created_at"
   add_index "clientes", ["empresa_id"], name: "index_clientes_on_empresa_id"
+
+  create_table "colections", force: :cascade do |t|
+    t.string   "name"
+    t.date     "data_inicio"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+  end
+
+  add_index "colections", ["user_id", "created_at"], name: "index_colections_on_user_id_and_created_at"
+  add_index "colections", ["user_id"], name: "index_colections_on_user_id"
 
   create_table "collections", force: :cascade do |t|
     t.string   "name"
@@ -54,6 +66,20 @@ ActiveRecord::Schema.define(version: 20151205065432) do
 
   add_index "empresas", ["user_id", "created_at"], name: "index_empresas_on_user_id_and_created_at"
   add_index "empresas", ["user_id"], name: "index_empresas_on_user_id"
+
+  create_table "items", force: :cascade do |t|
+    t.string   "name"
+    t.string   "referencia"
+    t.float    "preco_unitario"
+    t.string   "info"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "collection_id"
+  end
+
+  add_index "items", ["collection_id", "created_at"], name: "index_items_on_collection_id_and_created_at"
+  add_index "items", ["collection_id"], name: "index_items_on_collection_id"
+  add_index "items", ["referencia"], name: "index_items_on_referencia", unique: true
 
   create_table "pedidos", force: :cascade do |t|
     t.integer  "qtd_itens"
