@@ -4,79 +4,85 @@
       <h2><%= pluralize(@cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2>
 
       <ul>
-      <% @cliente.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @cliente.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
-  <% end %>
+    <% end %>
   
-      <div class="row" style="padding:10px","margin:20px">
+      <div class="row">
             <div class="col-md-6">
               <strong>Nome Fantasia</strong>
-                 <%= f.text_field :nome_fantasia, :class => 'form-control' %>
-
+              <ul class="list-group">
+                <li><%= f.text_field :nome_fantasia, :class => 'form-control' %></li>
+              </ul>
             </div>
             <div class="col-md-6">
               <strong>Email</strong>
-                    <%= f.text_field :email,:class => 'form-control' %>
+              <ul class="list-group">
+                <li><%= f.text_field :email,:class => 'form-control' %></li>
               </ul>
             </div>
       </div>
-      <p></p>
       
-      <div class="row" style="padding:10px","margin:20px">
+      <div class="row">
             <div class="col-md-6">
               <strong>CNPJ</strong>
-                     <%= f.number_field :cnpj, :class => 'form-control' %>
-
+              <ul class="list-group">
+                <li><%= f.text_field :cnpj, :class => 'form-control' %></li>
+              </ul>
             </div>
             <div class="col-md-6">
               <strong>Razão Social</strong>
-                    <%= f.text_field :razao_soc,:class => 'form-control' %>
+              <ul class="list-group">
+                <li><%= f.text_field :razao_soc,:class => 'form-control' %></li>
               </ul>
             </div>
       </div>
-      <p></p>
-      <div class="row" style="padding:10px","margin:20px">
+      
+      <div class="row">
             <div class="col-md-6">
               <strong>Inscrição Estadual</strong>
-                 <%= f.text_field :inscricao_es, :class => 'form-control' %>
-
+              <ul class="list-group">
+                 <li><%= f.text_field :inscricao_es, :class => 'form-control' %></li>
+              </ul>
             </div>
             <div class="col-md-6">
               <strong>Nome do Comprador</strong>
-                    <%= f.text_field :nome_comprador,:class => 'form-control' %>
+              <ul class="list-group">
+                    <li><%= f.text_field :nome_comprador,:class => 'form-control' %></li>
               </ul>
             </div>
       </div>
-      <p></p>
-      <div class="row" style="padding:10px","margin:20px">
+      
+      <div class="row">
             <div class="col-md-6">
               <strong>Nome do Banco</strong>
-                 <%= f.text_field :nome_banco, :class => 'form-control' %>
-
+              <ul class="list-group">
+                 <li><%= f.text_field :nome_banco, :class => 'form-control' %></li>
+              </ul> 
             </div>
             <div class="col-md-6">
               <strong>Agência</strong>
-                    <%= f.text_field :agencia,:class => 'form-control' %>
+              <ul class="list-group">
+                    <li><%= f.text_field :agencia,:class => 'form-control' %></li>
               </ul>
             </div>
       </div>
-      <p></p>
-      <div class="row" style="padding:10px","margin:20px">
+      
+      <div class="row">
             <div class="col-md-6">
               <strong>Conta Corrente</strong>
-                 <%= f.text_field :conta_corrente, :class => 'form-control' %>
-
+              <ul class="list-group">
+                 <li><%= f.text_field :conta_corrente, :class => 'form-control' %></li>
+              </ul> 
             </div>
             
       </div>
-<p></p>
-<p></p>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-  </div>
-</div>
+      
+      <div class="actions text-center">
+        <%= f.submit :class => 'btn btn-primary'%>
+      </div>
+    </div>
 <% end %>
