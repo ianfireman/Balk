@@ -8,7 +8,7 @@
         <tr>
           <th>
              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-             Lista de Itens
+               Cliente
           </th>
           <th>
              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
@@ -25,7 +25,7 @@
       <tbody>
         <% @pedidos.each do |pedido| %>
           <tr>
-            <td>Itens</td>
+            <td><%= Cliente.find_by(id: pedido.cliente_id).nome_fantasia %></td>
             <td><%= pedido.qtd_itens %></td>
             <td><%= pedido.preco_total %></td>
             <td><%= link_to 'Mostrar', pedido %>

@@ -1,17 +1,63 @@
 <div class="panel panel-default">
   <div class="panel-heading" id="painel_list"><div class="text-center">Pedido<p id="notice"><%= notice %></p></div></div>
-    <div class="text-center">
-    <p>
-      <strong>Quantidade de Itens:</strong>
-      <%= @pedido.qtd_itens %>
-    </p>
+    <div class="panel-body">
+
+      <div class="row">
+            <div class="col-md-6">
+              <strong>Cliente</strong>
+              <ul class="list-group">
+                <li class="list-group-item"><%= Cliente.find(@pedido.cliente_id).nome_fantasia %></li>
+              </ul>
+            </div>
+      </div>
     
-    <p>
-      <strong>Preço total:</strong>
-      <%= @pedido.preco_total %>
-    </p>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Quantidade</th>
+          <th>Name</th>
+          <th>Referencia</th>
+          <th>Preco unitario</th>
+          <th>Info</th>
+          <th colspan="1"></th>
+        </tr>
+      </thead>
     
-    <%= link_to 'Editar', edit_pedido_path(@pedido) %> |
-    <%= link_to 'Voltar', pedidos_path %>
+      <tbody>
+        <% total = 0 %>
+        <% @items.zip(@relations).each do |item| %>
+          <tr>
+            <td><%= item[1].quantidade %></td>
+            <td><%= item[0].name %></td>
+            <td><%= item[0].referencia %></td>
+            <td><%= item[0].preco_unitario %></td>
+            <td><%= item[0].info %></td>
+            <td><%= link_to 'Mostrar', item[0] %></td>
+          </tr>
+          <% total += (item[0].preco_unitario * item[1].quantidade) %>
+        <% end %>
+        
+      </tbody>
+    </table>
+    <div>
+      <h2 class="text-center">Valor Total: <%= total %></h2>
+    </div>
+    
+    <div class="text-center" id="buttons_show">
+        <div class="row">
+          
+          <div class="col-md-6">
+            <div class="pull-left">
+              <div class="text-center"> <%= link_to 'Editar', edit_pedido_path(@pedido),  {:style=>'color:black;', :class => "btn btn-default"} %> </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="pull-right">
+              <div class="text-center"> <%= link_to 'Voltar', pedidos_path,  {:style=>'color:black;', :class => "btn btn-default"} %> </div>
+            </div>
+          </div>
+        </div>
+      </div>
   </div>
 </div>

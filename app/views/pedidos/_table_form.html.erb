@@ -1,0 +1,26 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Coleção</th>
+      <th>Referencia</th>
+      <th>Nome</th>
+      <th>Quantidade</th>
+      <th>Info</th>
+      <th>Preco unitario</th>
+    </tr>
+  </thead>
+      
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+          <td><%= Collection.find_by(id: item.collection_id).name %></td>
+          <td><%= item.referencia %></td>
+          <td><%= item.name %></td>
+          <td style="width:10px;"><%= rl.number_field :quantidade, :class => 'form-control', :placeholder => '0'%></td>
+          <td><%= item.info %></td>
+          <td><%= item.preco_unitario %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+    

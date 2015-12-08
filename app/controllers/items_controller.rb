@@ -85,12 +85,12 @@ class ItemsController < ApplicationController
       current_user.active_empresa > 0 ? true : (redirect_to admin_path, notice: 'Por favor ative alguma empresa.')
     end
     
-    def correct_collection
+    def correct_collection 
       @item = Item.find(params[:id])
       @collections = current_empresa.collections.all
       @collections.each do |c|
         if(@item.collection_id == c.id)
-          @pass = false
+          @pass = false #invertido para que passe a condiçao certa para o if do redirect_to
           break
         else
           @pass = true

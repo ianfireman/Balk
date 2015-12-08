@@ -1,8 +1,10 @@
 <div class="panel panel-default">
     <div class="panel-heading" id="painel_list"><div class="text-center">Cadastro de Clientes</div></div>
-    <div class="text-center">
+    <div class="panel-body">
         <%= render 'form' %>
         
-        <%= link_to 'Voltar', clientes_path %>
+        <div class="pull-right">
+            <%= link_to 'Voltar', clientes_path, :class => 'btn btn-default'  %>
+        </div>
     </div>
 </div>

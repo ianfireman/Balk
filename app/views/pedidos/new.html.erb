@@ -1,8 +1,66 @@
 <div class="panel panel-default">
     <div class="panel-heading" id="painel_list"><div class="text-center">Cadastro de Pedido</div></div>
-    <div class="text-center">
-        <%= render 'form' %>
+    <div class="panel-body">
         
-        <%= link_to 'Voltar', pedidos_path %>
+      <%= form_for(@pedido) do |f| %>
+        <% if @pedido.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@pedido.errors.count, "error") %> prohibited this pedido from being saved:</h2>
+            <ul>
+              <% @pedido.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+              
+        <h2>Cliente:</h2>
+        <div class="form-group">
+          <%= f.select :cliente_id ,current_empresa.clientes.all.collect { |p| [ p.nome_fantasia, p.id ] }%>
+        </div>
+        
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Coleção</th>
+                <th>Referencia</th>
+                <th>Nome</th>
+                <th>Quantidade</th>
+                <th>Info</th>
+                <th>Preco unitario</th>
+              </tr>
+            </thead>
+                
+            <tbody>
+              <% i = 0 %>
+              <% j = 0 %>
+              <% @items.each do |item| %>
+                <tr>
+                    <td><%= Collection.find_by(id: item.collection_id).name %></td>
+                    <td><%= item.referencia %></td>
+                    <td><%= item.name %></td>
+                    <%= f.fields_for :relations do |rl| %>
+                      <% if i == j %>
+                        <td style="width:10px;"><%= rl.number_field :quantidade, :class => 'form-control', :placeholder => '0' %></td>
+                        <%= rl.hidden_field :item_id, :value => item.id %>
+                        <% i += 1 %>
+                      <% end %>
+                    <% end %>
+                    <td><%= item.info %></td>
+                    <td><%= item.preco_unitario %></td>
+                </tr>
+                <% j += 1 %>
+              <% end %>
+            </tbody>
+          </table>
+    
+        <div class="actions" align="center">
+           <br><br>
+           <%= f.submit "Criar Pedido", :class => 'btn btn-primary'%>
+        </div>
+      <% end %>
+      <div class="pull-right">
+        <%= link_to 'Voltar', pedidos_path, :class => 'btn btn-default' %>
+      </div>
     </div>
 </div>

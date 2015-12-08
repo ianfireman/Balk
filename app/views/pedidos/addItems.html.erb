@@ -1,0 +1,56 @@
+<div class="panel panel-default">
+  <div class="panel-heading" id="painel_list"><div class="text-center">Pedido<p id="notice"><%= notice %></p></div></div>
+    <div id="painel_body" class="paine-body">
+      
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th>Coleção</th>
+          <th>Referencia</th>
+          <th>Nome</th>
+          <th>Quantidade</th>
+          <th>Info</th>
+          <th>Preco unitario</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        <%= form_for @relations do |f| %>
+          <% @items.each do |item| %>
+            <tr>
+              <%= fields_for :relations do |rl| %>
+                <td><%= Collection.find_by(id: item.collection_id).name %></td>
+                <td><%= item.referencia %></td>
+                <td><%= item.name %></td>
+                <td style="width:10px;"><%= rl.number_field :quantidade, :class => 'form-control', :placeholder => '0'%></td>
+                <td><%= item.info %></td>
+                <td><%= item.preco_unitario %></td>
+              <% end %>
+            </tr>
+          <% end %>
+          <%= f.submit %>
+        <% end %>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><strong>Valor Total:</strong></td>
+        <td><strong>200.00</strong></td>
+      </tbody>
+    </table>
+    
+    <p>
+      <strong>Quantidade de Itens:</strong>
+      <%= @pedido.qtd_itens %>
+    </p>
+    
+    <p>
+      <strong>Preço total:</strong>
+      <%= @pedido.preco_total %>
+    </p>
+    
+    
+    <%= link_to 'Editar', edit_pedido_path(@pedido) %> |
+    <%= link_to 'Voltar', pedidos_path %>
+  </div>
+</div>

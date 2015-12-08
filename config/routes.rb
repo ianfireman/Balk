@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'admin' => 'home#admin'
   get 'empresa' => 'empresas#index'
   get 'active' => 'empresas#active'
+  get 'addItems' => 'pedidos#addItems'
   get 'clientes' => 'clientes#index'
   get 'signup'  => 'users#new'
   get    'login'   => 'sessions#new'

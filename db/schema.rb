@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151205193146) do
+ActiveRecord::Schema.define(version: 20151208062054) do
 
   create_table "clientes", force: :cascade do |t|
     t.string   "nome_fantasia"
@@ -31,6 +31,17 @@ ActiveRecord::Schema.define(version: 20151205193146) do
   add_index "clientes", ["created_at"], name: "index_clientes_on_user_id_and_empresa_id_and_created_at"
   add_index "clientes", ["empresa_id", "created_at"], name: "index_clientes_on_empresa_id_and_created_at"
   add_index "clientes", ["empresa_id"], name: "index_clientes_on_empresa_id"
+
+  create_table "colections", force: :cascade do |t|
+    t.string   "name"
+    t.date     "data_inicio"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+  end
+
+  add_index "colections", ["user_id", "created_at"], name: "index_colections_on_user_id_and_created_at"
+  add_index "colections", ["user_id"], name: "index_colections_on_user_id"
 
   create_table "collections", force: :cascade do |t|
     t.string   "name"
@@ -75,7 +86,39 @@ ActiveRecord::Schema.define(version: 20151205193146) do
     t.float    "preco_total"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "cliente_id"
   end
+
+  add_index "pedidos", ["cliente_id", "created_at"], name: "index_pedidos_on_cliente_id_and_created_at"
+  add_index "pedidos", ["cliente_id"], name: "index_pedidos_on_cliente_id"
+
+  create_table "relations", force: :cascade do |t|
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "cliente_id"
+    t.integer  "item_id"
+    t.integer  "quantidade", default: 0
+    t.integer  "pedido_id"
+  end
+
+  add_index "relations", ["cliente_id", "created_at", "item_id"], name: "index_relations_on_cliente_id_and_created_at_and_item_id"
+  add_index "relations", ["cliente_id"], name: "index_relations_on_cliente_id"
+  add_index "relations", ["item_id"], name: "index_relations_on_item_id"
+  add_index "relations", ["pedido_id", "created_at"], name: "index_relations_on_pedido_id_and_created_at"
+  add_index "relations", ["pedido_id"], name: "index_relations_on_pedido_id"
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "pedido_id"
+    t.integer  "cliente_id"
+    t.string   "referencia_produto"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "relationships", ["cliente_id"], name: "index_relationships_on_cliente_id"
+  add_index "relationships", ["pedido_id", "referencia_produto"], name: "index_relationships_on_pedido_id_and_referencia_produto", unique: true
+  add_index "relationships", ["pedido_id"], name: "index_relationships_on_pedido_id"
+  add_index "relationships", ["referencia_produto"], name: "index_relationships_on_referencia_produto"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

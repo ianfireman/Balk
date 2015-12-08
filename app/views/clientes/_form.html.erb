@@ -15,13 +15,13 @@
             <div class="col-md-6">
               <strong>Nome Fantasia</strong>
               <ul class="list-group">
-                <li><%= f.text_field :nome_fantasia, :class => 'form-control' %></li>
+                <%= f.text_field :nome_fantasia, :class => 'form-control' %>
               </ul>
             </div>
             <div class="col-md-6">
               <strong>Email</strong>
               <ul class="list-group">
-                <li><%= f.text_field :email,:class => 'form-control' %></li>
+                <%= f.text_field :email,:class => 'form-control' %>
               </ul>
             </div>
       </div>
@@ -30,13 +30,13 @@
             <div class="col-md-6">
               <strong>CNPJ</strong>
               <ul class="list-group">
-                <li><%= f.text_field :cnpj, :class => 'form-control' %></li>
+                <%= f.text_field :cnpj, :class => 'form-control' %>
               </ul>
             </div>
             <div class="col-md-6">
               <strong>Razão Social</strong>
               <ul class="list-group">
-                <li><%= f.text_field :razao_soc,:class => 'form-control' %></li>
+                <%= f.text_field :razao_soc,:class => 'form-control' %>
               </ul>
             </div>
       </div>
@@ -45,13 +45,13 @@
             <div class="col-md-6">
               <strong>Inscrição Estadual</strong>
               <ul class="list-group">
-                 <li><%= f.text_field :inscricao_es, :class => 'form-control' %></li>
+                 <%= f.text_field :inscricao_es, :class => 'form-control' %>
               </ul>
             </div>
             <div class="col-md-6">
               <strong>Nome do Comprador</strong>
               <ul class="list-group">
-                    <li><%= f.text_field :nome_comprador,:class => 'form-control' %></li>
+                <%= f.text_field :nome_comprador,:class => 'form-control' %>
               </ul>
             </div>
       </div>
@@ -60,13 +60,13 @@
             <div class="col-md-6">
               <strong>Nome do Banco</strong>
               <ul class="list-group">
-                 <li><%= f.text_field :nome_banco, :class => 'form-control' %></li>
+                <%= f.text_field :nome_banco, :class => 'form-control' %>
               </ul> 
             </div>
             <div class="col-md-6">
               <strong>Agência</strong>
               <ul class="list-group">
-                    <li><%= f.text_field :agencia,:class => 'form-control' %></li>
+                <%= f.text_field :agencia,:class => 'form-control' %>
               </ul>
             </div>
       </div>
@@ -75,14 +75,13 @@
             <div class="col-md-6">
               <strong>Conta Corrente</strong>
               <ul class="list-group">
-                 <li><%= f.text_field :conta_corrente, :class => 'form-control' %></li>
+                 <%= f.text_field :conta_corrente, :class => 'form-control' %>
               </ul> 
             </div>
             
       </div>
       
       <div class="actions text-center">
-        <%= f.submit :class => 'btn btn-primary'%>
+        <%= f.submit "Salvar Cliente", :class => 'btn btn-primary'%>
       </div>
-    </div>
 <% end %>
