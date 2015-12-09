@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151208062054) do
+ActiveRecord::Schema.define(version: 20151209032840) do
 
   create_table "clientes", force: :cascade do |t|
     t.string   "nome_fantasia"
@@ -26,6 +26,9 @@ ActiveRecord::Schema.define(version: 20151208062054) do
     t.string   "agencia"
     t.string   "conta_corrente"
     t.integer  "empresa_id"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.string   "adress"
   end
 
   add_index "clientes", ["created_at"], name: "index_clientes_on_user_id_and_empresa_id_and_created_at"
