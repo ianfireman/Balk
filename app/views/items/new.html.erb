@@ -1,7 +1,41 @@
 <div class="panel panel-default">
   <div class="panel-heading" id="painel_list"><div class="text-center">Adicionar Produto</div></div>
   <div class="text-center">
-    <%= render 'form' %>
+    
+    <%= form_for(@item) do |f| %>
+      <% if @item.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+    
+          <ul>
+          <% @item.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <%= f.hidden_field :collection_id, :value => @collectionN.id %>
+      <div class="field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+      </div>
+      <div class="field">
+        <%= f.label :referencia %><br>
+        <%= f.text_field :referencia %>
+      </div>
+      <div class="field">
+        <%= f.label :preco_unitario %><br>
+        <%= f.text_field :preco_unitario %>
+      </div>
+      <div class="field">
+        <%= f.label :info %><br>
+        <%= f.text_field :info %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
+
     
     <%= link_to 'Back', items_path %>
   </div>

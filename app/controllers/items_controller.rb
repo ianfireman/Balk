@@ -22,7 +22,7 @@ class ItemsController < ApplicationController
 
   # GET /items/new
   def new
-    @@collectionN = Collection.find(params[:collectionN])
+    @collectionN = Collection.find(params[:collectionN])
     @item = Item.new
   end
 
@@ -33,7 +33,7 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.json
   def create
-    @item = @@collectionN.items.new(item_params)
+    @item = Item.new(item_params)
 
     respond_to do |format|
       if @item.save
@@ -78,7 +78,7 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name, :referencia, :preco_unitario, :info)
+      params.require(:item).permit(:name, :referencia, :preco_unitario, :info, :collection_id)
     end
     
     def empresa_ativa
