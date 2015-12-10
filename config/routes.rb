@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   
   root "home#index"
   
+  get 'auth/:provider/callback', to: 'sessions#createG'
+  get 'auth/failure', to: redirect('/')
+  
   get 'admin' => 'home#admin'
   get 'empresa' => 'empresas#index'
   get 'active' => 'empresas#active'
