@@ -2,40 +2,38 @@
   <div class="panel-heading" id="painel_list"><div class="text-center">Empresa<p id="notice"><%= notice %></p></div></div>
     <div id="painel_body" class="paine-body">
     
-    <div class="row">
-            <div class="col-md-6">
-              <strong>Nome Fantasia</strong>
-              <ul class="list-group">
-                <li class="list-group-item"><%= @empresa.nome_fantasia %></li>
-              </ul>
-            </div>
-            
-            <div class="col-md-6">
-              <strong>Email</strong>
-              <ul class="list-group">
-                <li class="list-group-item"><%= @empresa.email %></li>
-              </ul>
-            </div>
-      </div>
-      
       <div class="row">
-            <div class="col-md-6">
-              <strong>Razão Social:</strong>
-              <ul class="list-group">
-                <li class="list-group-item"><%= @empresa.razao_soc %></li>
-              </ul>
-            </div>
-            <div class="col-md-6">
-              <strong>Cnpj</strong>
-              <ul class="list-group">
-                <li class="list-group-item"><%= @empresa.cnpj %></li>
-              </ul>
-            </div>
+        <div class="col-md-6">
+          <strong>Nome Fantasia</strong>
+          <ul class="list-group">
+            <li class="list-group-item"><%= @empresa.nome_fantasia %></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <strong>Email</strong>
+          <ul class="list-group">
+            <li class="list-group-item"><%= @empresa.email %></li>
+          </ul>
+        </div>
+      </div>
+        
+      <div class="row">
+        <div class="col-md-6">
+          <strong>Razão Social:</strong>
+          <ul class="list-group">
+            <li class="list-group-item"><%= @empresa.razao_soc %></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <strong>Cnpj</strong>
+          <ul class="list-group">
+            <li class="list-group-item"><%= @empresa.cnpj %></li>
+          </ul>
+        </div>
       </div>
       
       <div class="text-center" id="buttons_show">
         <div class="row">
-          
           <div class="col-md-6">
             <div class="pull-right">
               <div class="text-center"> <%= link_to 'Editar', edit_empresa_path(@empresa),  {:style=>'color:black;', :class => "btn btn-default"} %> </div>
@@ -49,5 +47,6 @@
           </div>
         </div>
       </div>
+      
   </div>
 </div>

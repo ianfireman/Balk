@@ -1,9 +1,23 @@
 <div class="panel panel-default">
-    <div class="panel-heading" id="painel_list"><div class="text-center">Editar Cliente</div></div>
-    <div class="text-center">
+    <div class="panel-heading" id="painel_list"><div class="text-center">Editar Empresa</div></div>
+    <div id="painel_body" class="paine-body">
         <%= render 'form' %>
         
-        <%= link_to 'Pagina da Empresa', @empresa %> |
-        <%= link_to 'Voltar', empresas_path %>
-   </div>
+        
+        <div class="text-center" id="buttons_show">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="pull-right">
+                    <div class="text-center"> <%= link_to 'Pagina da Empresa', @empresa, {:style=>'color:black;', :class => "btn btn-default"} %> </div>
+                    </div>
+                </div>
+             
+                <div class="col-md-6">
+                    <div class="pull-left">
+                        <div class="text-center"> <%= link_to 'Voltar', empresas_path,  {:style=>'color:black;', :class => "btn btn-default"} %> </div>
+                    </div>
+               </div>
+            </div>
+        </div>
+    </div>
 </div>

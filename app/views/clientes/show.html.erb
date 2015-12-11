@@ -3,78 +3,75 @@
     <div id="painel_body" class="paine-body">
       
       <div class="row">
-            <div class="col-md-6">
-              <strong>Nome Fantasia</strong>
-              <ul class="list-group">
-                <li class="list-group-item"><%= @cliente.nome_fantasia %></li>
-              </ul>
-            </div>
-            
-            <div class="col-md-6">
-              <strong>Cnpj</strong>
-              <ul class="list-group">
-                <li class="list-group-item"><%= @cliente.cnpj %></li>
-              </ul>
-            </div>
+        <div class="col-md-6">
+          <strong>Nome Fantasia</strong>
+          <ul class="list-group">
+            <li class="list-group-item"><%= @cliente.nome_fantasia %></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <strong>Cnpj</strong>
+            <ul class="list-group">
+              <li class="list-group-item"><%= @cliente.cnpj %></li>
+            </ul>
+        </div>
       </div>
       
       <div class="row">
-            <div class="col-md-6">
-              <strong>Email</strong>
-              <ul class="list-group">
-                <li class="list-group-item"><%= @cliente.email %></li>
-              </ul>
-            </div>
-            <div class="col-md-6">
-              <strong>Razão Social</strong>
-              <ul class="list-group">
-                <li class="list-group-item"><%= @cliente.razao_soc %></li>
-              </ul>
-            </div>
+        <div class="col-md-6">
+          <strong>Email</strong>
+          <ul class="list-group">
+            <li class="list-group-item"><%= @cliente.email %></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <strong>Razão Social</strong>
+          <ul class="list-group">
+            <li class="list-group-item"><%= @cliente.razao_soc %></li>
+          </ul>
+        </div>
       </div>
       
       <div class="row">
-            <div class="col-md-6">
-              <strong>Inscrição Estadual</strong>
-              <ul class="list-group">
-                <li class="list-group-item"><%= @cliente.inscricao_es %></li>
-              </ul>
-            </div>
-            <div class="col-md-6">
-              <strong>Nome do Comprador</strong>
-              <ul class="list-group">
-                <li class="list-group-item"><%= @cliente.nome_comprador %></li>
-              </ul>
-            </div>
+        <div class="col-md-6">
+          <strong>Inscrição Estadual</strong>
+          <ul class="list-group">
+            <li class="list-group-item"><%= @cliente.inscricao_es %></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <strong>Nome do Comprador</strong>
+          <ul class="list-group">
+            <li class="list-group-item"><%= @cliente.nome_comprador %></li>
+          </ul>
+        </div>
       </div>
       
       <div class="row">
-            <div class="col-md-6">
-              <strong>Nome do Banco</strong>
-              <ul class="list-group">
-                <li class="list-group-item"><%= @cliente.nome_banco %></li>
-              </ul>
-            </div>
-            
-            <div class="col-md-6">
-              <strong>Agência</strong>
-              <ul class="list-group">
-                <li class="list-group-item"><%= @cliente.agencia %></li>
-              </ul>
-            </div>
+        <div class="col-md-6">
+          <strong>Nome do Banco</strong>
+          <ul class="list-group">
+            <li class="list-group-item"><%= @cliente.nome_banco %></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <strong>Agência</strong>
+          <ul class="list-group">
+            <li class="list-group-item"><%= @cliente.agencia %></li>
+          </ul>
+        </div>
       </div>
       
       <div class="row">
-            <div class="col-md-6">
-              <strong>Conta Corrente</strong
-              <ul class="list-group">
-                <li class="list-group-item"><%= @cliente.conta_corrente %></li>
-              </ul>
-            </div>
-            
-            <div class="col-md-6">
-            </div>
+        <div class="col-md-6">
+          <strong>Conta Corrente</strong>
+          <ul class="list-group">
+            <li class="list-group-item"><%= @cliente.conta_corrente %></li>
+          </ul>
+        </div>
+        <div class="col-md-6"></div>
       </div>
+      
       <div class="text-center" id="buttons_show">
         <div class="row">
           <div class="col-md-6">
@@ -82,7 +79,6 @@
               <div class="text-center"> <%= link_to 'Editar', edit_cliente_path(@cliente), {:style=>'color:black;', :class => "btn btn-default"} %> </div>
             </div>
           </div>
-         
           <div class="col-md-6">
             <div class="pull-left">
               <div class="text-center"> <%= link_to 'Voltar', clientes_path,  {:style=>'color:black;', :class => "btn btn-default"} %> </div>
@@ -90,5 +86,6 @@
           </div>
         </div>
       </div>
+      
   </div>
 </div>

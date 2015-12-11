@@ -2,42 +2,45 @@
   <% if @empresa.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@empresa.errors.count, "error") %> prohibited this empresa from being saved:</h2>
-
       <ul>
-      <% @empresa.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @empresa.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
-
-      <div class="row" style="padding:10px","margin:20px">
-            <div class="col-md-6">
-              <strong>Nome Fantasia</strong>
-                 <%= f.text_field :nome_fantasia, :class => 'form-control' %>
-
-            </div>
-            <div class="col-md-6">
-              <strong>Email</strong>
-                    <%= f.text_field :email,:class => 'form-control' %>
-              </ul>
-            </div>
-      </div> 
       
-      <div class="row" style="padding:10px","margin:20px">
-            <div class="col-md-6">
-              <strong>CNPJ</strong>
-                     <%= f.number_field :cnpj, :class => 'form-control' %>
-
-            </div>
-            <div class="col-md-6">
-              <strong>Razão Social</strong>
-                    <%= f.text_field :razao_soc,:class => 'form-control' %>
-              </ul>
-            </div>
-      </div>
+  <div class="row">
+    <div class="col-md-6">
+      <strong>Nome Fantasia</strong>
+      <ul class="list-group">
+        <%= f.text_field :nome_fantasia, :class => 'form-control' %>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <strong>Email</strong>
+      <ul class="list-group">
+        <%= f.text_field :email,:class => 'form-control' %>
+      </ul>
+    </div>
   </div>
-  <div class="actions" align="center" style="padding:25px","margin:20px">
-    <%= f.submit %>
+      
+  <div class="row">
+    <div class="col-md-6">
+      <strong>CNPJ</strong>
+      <ul class="list-group">
+        <%= f.number_field :cnpj, :class => 'form-control' %>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <strong>Razão Social</strong>
+      <ul class="list-group">
+        <%= f.text_field :razao_soc,:class => 'form-control' %>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="actions text-center">
+    <%= f.submit "Salvar Empresa", :class => 'btn btn-primary'%>
   </div>
 <% end %>
