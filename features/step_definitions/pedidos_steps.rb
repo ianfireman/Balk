@@ -11,6 +11,10 @@ Given(/^I m in my homepage on nobalk$/) do
   @user.active_empresa = @empresa.id
   @user.save
   
+  @cliente = @empresa.clientes.build({"nome_fantasia"=>"Test", "email"=>"test@test.com", "cnpj"=>"1234", "razao_soc"=>"1234", "adress"=>"Rio Mar Recife Brasil"})
+  @cliente.save
+  @empresa.save
+  
   fill_in 'username', :with => 'danilo@danilo.com'  
 
   fill_in 'password', :with => 'danilo'  
@@ -26,4 +30,10 @@ end
 Then(/^I should see my pedidos list$/) do
   assert_current_path('/pedidos')
 end
+
+Then(/^I should click in  novo pedido$/) do
+click_link("Novo pedido")
+end
+
+
 
