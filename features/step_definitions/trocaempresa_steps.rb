@@ -13,7 +13,15 @@ Given(/^I am logged on Nobalk$/) do
   click_button("Entrar")
   assert_current_path('/admin')
 end
+
+When(/^I press the button empresas/) do
+  click_button("EMPRESAS") 
+end
   
+Then(/^I should see my empresas list$/) do
+  assert_current_path('/empresas')
+end
+
 Then(/^I click in the button$/) do
   click_link("Nike")
 end
