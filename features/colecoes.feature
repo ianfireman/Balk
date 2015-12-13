@@ -6,3 +6,5 @@ Scenario:Acess collections page
 	Then I should see my collections list
 	Then I should click in new collections
 	And I fill the blanks
+	When I click in save collections
+	Then I should see a message of confirmation
