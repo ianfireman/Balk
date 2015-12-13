@@ -6,6 +6,11 @@ Given(/^I am logged on Nobalk$/) do
     :password => "danilo",
     :activated => true
   )
+  @empresa = @user.empresas.build({"nome_fantasia"=>"Test", "email"=>"test@test.com", "cnpj"=>"1234", "razao_soc"=>"1234"})
+  @empresa.save
+  @user.active_empresa = @empresa.id
+  @user.save
+  
   fill_in 'username', :with => 'danilo@danilo.com'  
 
   fill_in 'password', :with => 'danilo'  
@@ -14,25 +19,39 @@ Given(/^I am logged on Nobalk$/) do
   assert_current_path('/admin')
 end
 
-When(/^I press the button empresas/) do
-  click_button("EMPRESAS") 
+When(/^I click in the button enterprise$/) do
+  click_link("EMPRESAS") 
 end
   
-Then(/^I should see my empresas list$/) do
+Then(/^I should see my enterprise list$/) do
   assert_current_path('/empresas')
 end
 
-Then(/^I click in the button$/) do
-  click_link("Nike")
+And(/^I click in the button new enterprise$/) do
+  click_link("Cadastrar Empresa") 
 end
 
-And(/^I choose another enterprise$/) do
-  visit"http://nobalk-imlbf.c9.io/active?empresaN=1"
+Then(/^I should see new enterprise page$/) do
+  assert_current_path('/empresas/new')
 end
 
-Then(/^I should see the switch of enterprises$/) do
-  visit"http://nobalk-imlbf.c9.io/empresas"
+And(/^I fill the fields$/) do
+  fill_in 'nome_empresa', :with => 'Empresao' 
+  fill_in 'email_empresa', :with => 'empresao@danilo.com'
+  fill_in 'cnpj_empresa', :with => '123456' 
+  fill_in 'razao_empresa', :with => 'empresao'
 end
 
+And(/^I click in the button save enterprise$/) do
+  assert_difference('Empresa.count') do
+    click_button("Salvar Empresa") 
+  end
+end
 
- 
+And(/^I select Empresao for active empresa$/) do
+  click_link("Empresao")
+end
+
+Then(/^I should see clientes page$/) do
+  assert_current_path('/clientes')
+end
