@@ -40,7 +40,7 @@ When(/^I click in save collections$/) do
 end
 
 Then(/^I should see a message of confirmation$/) do
-  assert_current_path('/collections/1')
+  assert_current_path('/collections/980190963')
 end
 
 
