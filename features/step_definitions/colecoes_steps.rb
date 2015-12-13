@@ -1,5 +1,5 @@
 Given(/^I m in my admin page on nobalk$/) do
-  visit'https://bigboss-dmop.c9users.io/login'
+  visit'https://nobalk-imlbf.c9.io/login'
   @user = User.create!(
     :name => "danilo",
     :email =>"danilo@danilo.com",
