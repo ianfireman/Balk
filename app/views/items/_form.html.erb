@@ -10,23 +10,38 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  
+  <div class="row">
+    <div class="col-md-6">
+      <strong>Nome</strong>
+      <ul class="list-group">
+        <%= f.text_field :name, :class => 'form-control' %>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <strong>Referência</strong>
+      <ul class="list-group">
+        <%= f.text_field :referencia,:class => 'form-control' %>
+      </ul>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :referencia %><br>
-    <%= f.text_field :referencia %>
+  
+  <div class="row">
+    <div class="col-md-6">
+      <strong>Preço Unitário</strong>
+      <ul class="list-group">
+        <%= f.text_field :preco_unitario, :class => 'form-control' %>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <strong>Informações</strong>
+      <ul class="list-group">
+        <%= f.text_field :info,:class => 'form-control' %>
+      </ul>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :preco_unitario %><br>
-    <%= f.text_field :preco_unitario %>
-  </div>
-  <div class="field">
-    <%= f.label :info %><br>
-    <%= f.text_field :info %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  
+  <div class="actions text-center">
+    <%= f.submit  "Salvar Produto", :class => 'btn btn-primary'%>
   </div>
 <% end %>

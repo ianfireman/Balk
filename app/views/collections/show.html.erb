@@ -1,50 +1,66 @@
 <div class="panel panel-default">
   <div class="panel-heading" id="painel_list"><div class="text-center">Coleção<p id="notice"><%= notice %></p></div></div>
-  
-    <div class="text-center">
-      <p>
-        <strong>Nome:</strong>
-        <%= @collection.name %>
-      </p>
+    <div class="panel-body">
+      <div class="text-center">
+        <p>
+          <strong>Nome:</strong>
+          <%= @collection.name %>
+        </p>
+        
+        <p>
+          <strong>Data inicio:</strong>
+          <%= @collection.data_inicio %>
+        </p>
+      </div>
       
-      <p>
-        <strong>Data inicio:</strong>
-        <%= @collection.data_inicio %>
-      </p>
-    </div>
-    
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>Referencia</th>
-          <th>Nome</th>
-          <th>Preco unitario</th>
-          <th>Info</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-      
-      <tbody>
-        <% @collection.items.all.each do |item| %>
+      <table class="table table-hover">
+        <thead>
           <tr>
-            <td><%= item.referencia %></td>
-            <td><%= item.name %></td>
-            <td><%= item.preco_unitario %></td>
-            <td><%= item.info %></td>
-            <td><%= link_to 'Show', item %></td>
-            <td><%= link_to 'Edit', edit_item_path(item) %></td>
-            <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <th>Referencia</th>
+            <th>Nome</th>
+            <th>Preco unitario</th>
+            <th>Info</th>
+            <th colspan="3"></th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
-    
-    <br>
-    <br>
-    
-    <div class="text-center">
-      <%= link_to 'Adicionar Produtos', {:controller => "items", :action => "new", :collectionN => @collection }%> |
-      <%= link_to 'Editar', edit_collection_path(@collection) %> |
-      <%= link_to 'Voltar', collections_path %>
+        </thead>
+        
+        <tbody>
+          <% @collection.items.all.each do |item| %>
+            <tr>
+              <td><%= item.referencia %></td>
+              <td><%= item.name %></td>
+              <td><%= item.preco_unitario %></td>
+              <td><%= item.info %></td>
+              <td><%= link_to 'Show', item %></td>
+              <td><%= link_to 'Edit', edit_item_path(item) %></td>
+              <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      
+      <br>
+      <br>
+      
+      <div class="text-center">
+        <%= link_to 'Adicionar Produtos', {:controller => "items", :action => "new", :collectionN => @collection }, {:style => 'color:white', :class => "btn btn-primary"}%>
+      </div>
+      
+      <div class="text-center" id="buttons_show">
+        <div class="row">
+          
+          <div class="col-md-6">
+            <div class="pull-left">
+              <div class="text-center"> <%= link_to 'Editar', edit_pedido_path(@collection),  {:style=>'color:black;', :class => "btn btn-default"} %> </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="pull-right">
+              <div class="text-center"> <%= link_to 'Voltar', collections_path,  {:style=>'color:black;', :class => "btn btn-default"} %> </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 </div>

@@ -10,16 +10,23 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field" align='center'>
-    <%= f.label :name %><br>
-    <%= f.text_field :name, :class => 'form-control',style:'width: 50%' %>
+  
+  <div class="row">
+    <div class="col-md-6">
+      <strong>Nome da Coleção</strong>
+      <ul class="list-group">
+        <%= f.text_field :name, :class => 'form-control' %>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <strong>Data de Início</strong>
+      <ul class="list-group">
+        <%= f.text_field :data_inicio, :class => 'form-control' %>
+      </ul>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :data_inicio %><br>
-    <%= f.date_select :data_inicio, :class => 'form-control' %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  
+  <div class="actions text-center">
+    <%= f.submit "Salvar Coleção", :class => 'btn btn-primary'%>
   </div>
 <% end %>

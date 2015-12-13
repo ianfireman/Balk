@@ -1,9 +1,18 @@
 <div class="panel panel-default">
-    <div class="panel-heading" id="painel_list"><div class="text-center">Nova Coleção</div></div>
-    <div class="text-center">
+  <div class="panel-heading" id="painel_list"><div class="text-center">Nova Coleção</div></div>
+  <div id="painel_body" class="paine-body">
 
-      <%= render 'form' %>
+    <%= render 'form' %>
       
-      <%= link_to 'Voltar', collections_path %>
+    <div class="text-center" id="buttons_show">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="pull-right">
+            <div class="text-center"> <%= link_to 'Voltar', collections_path,  {:style=>'color:black;', :class => "btn btn-default"} %> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
   </div>
 </div>

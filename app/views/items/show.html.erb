@@ -1,28 +1,51 @@
 <div class="panel panel-default">
     <div class="panel-heading" id="painel_list"><div class="text-center">Produto</div></div>
-    <div class="text-center">
+    <div id="painel_body" class="paine-body">
       
-      <p>
-        <strong>Name:</strong>
-        <%= @item.name %>
-      </p>
+      <div class="row">
+        <div class="col-md-6">
+          <strong>Nome</strong>
+          <ul class="list-group">
+            <li class="list-group-item"><%= @item.name %></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <strong>Referência</strong>
+            <ul class="list-group">
+              <li class="list-group-item"><%= @item.referencia %></li>
+            </ul>
+        </div>
+      </div>
       
-      <p>
-        <strong>Referencia:</strong>
-        <%= @item.referencia %>
-      </p>
+      <div class="row">
+        <div class="col-md-6">
+          <strong>Preço Unitário</strong>
+          <ul class="list-group">
+            <li class="list-group-item"><%= @item.preco_unitario %></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <strong>Informações</strong>
+            <ul class="list-group">
+              <li class="list-group-item"><%= @item.info %></li>
+            </ul>
+        </div>
+      </div>
       
-      <p>
-        <strong>Preco unitario:</strong>
-        <%= @item.preco_unitario %>
-      </p>
+      <div class="text-center" id="buttons_show">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="pull-right">
+              <div class="text-center"> <%= link_to 'Editar', edit_item_path(@item), {:style=>'color:black;', :class => "btn btn-default"} %> </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="pull-left">
+              <div class="text-center"> <%= link_to 'Voltar', items_path,  {:style=>'color:black;', :class => "btn btn-default"} %> </div>
+            </div>
+          </div>
+        </div>
+      </div>
       
-      <p>
-        <strong>Info:</strong>
-        <%= @item.info %>
-      </p>
-      
-      <%= link_to 'Edit', edit_item_path(@item) %> |
-      <%= link_to 'Back', items_path %>
   </div>
 </div>

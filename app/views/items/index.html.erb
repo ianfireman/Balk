@@ -23,9 +23,9 @@
             <td><%= item.referencia %></td>
             <td><%= item.preco_unitario %></td>
             <td><%= item.info %></td>
-            <td><%= link_to 'Show', item %></td>
-            <td><%= link_to 'Edit', edit_item_path(item) %></td>
-            <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Mostrar', item %></td>
+            <td><%= link_to 'Editar', edit_item_path(item) %></td>
+            <td><%= link_to 'Deletar', item, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
           </tr>
         <% end %>
       </tbody>
