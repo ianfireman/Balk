@@ -18,7 +18,6 @@ Given(/^I m in my admin page on nobalk$/) do
   click_button("Entrar")
   assert_current_path('/admin')
 end
-
   
 When(/^I press the button collections$/) do
   click_link("Coleções") 
