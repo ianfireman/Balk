@@ -1,5 +1,5 @@
 Given(/^I m in my admin page on nobalk$/) do
-  visit'https://nobalk.imlbf.c9.io/login'
+  visit'https://bigboss-dmop.c9users.io/login'
   @user = User.create!(
     :name => "danilo",
     :email =>"danilo@danilo.com",
@@ -26,5 +26,23 @@ end
 Then(/^I should see my collections list$/) do
   assert_current_path('/collections')
 end
+
+Then(/^I should click in new collections$/) do
+  click_link("Nova Coleção")
+end
+
+And(/^I fill the blanks$/) do
+  fill_in 'nome_colecao', :with => 'Sarude dandstorm'
+end
+
+When(/^I click in save collections$/) do
+  click_button("Salvar Coleção")
+end
+
+Then(/^I should see a message of confirmation$/) do
+  assert_current_path('/collections/1')
+end
+
+
 
 
