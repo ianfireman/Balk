@@ -29,3 +29,16 @@ Then(/^I should see my collections list$/) do
 end
 
 
+Then(/^I should click in new collections$/) do
+  click_link("Nova Coleção")
+end
+And(/^I fill the blanks$/) do
+  fill_in 'name', :with => 'Sarude dandstorm'
+  
+  
+end
+
+
+
+
+
