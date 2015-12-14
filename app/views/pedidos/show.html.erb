@@ -25,6 +25,7 @@
     
       <tbody>
         <% total = 0 %>
+        <% quantidadeT = 0 %>
         <% @items.zip(@relations).each do |item| %>
           <tr>
             <td><%= item[1].quantidade %></td>
@@ -35,8 +36,13 @@
             <td><%= link_to 'Mostrar', item[0] %></td>
           </tr>
           <% total += (item[0].preco_unitario * item[1].quantidade) %>
+          <% quantidadeT += item[1].quantidade %>
         <% end %>
-        
+        <% if @pedido.qtd_itens.nil? %>
+          <% @pedido.qtd_itens = quantidadeT %>
+          <% @pedido.preco_total = total %>
+          <% @pedido.save %>
+        <% end %>
       </tbody>
     </table>
     <div>
