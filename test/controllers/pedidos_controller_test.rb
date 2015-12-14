@@ -20,11 +20,11 @@ class PedidosControllerTest < ActionController::TestCase
     assert_not_nil assigns(:pedidos)
   end
 
-  #test "should get new" do
-  #  log_in_as(users(:carlos))
-  #  get :new
-  #  assert_response :success
-  #end
+  test "should get new" do
+    log_in_as(users(:carlos))
+    get :new
+    assert_response :success
+  end
 
   #test "should create pedido" do
   #  log_in_as(users(:carlos))
