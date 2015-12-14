@@ -1,2 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
 
- <%= link_to "Entre aqui!", login_path, class: "btn btn-lg btn-primary" %>
+<head>
+    <link rel="shortcut icon" href="balk-icon.ico" type="image/x-icon" />
+    <%= stylesheet_link_tag params[:controller] %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Nobalk</title>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" style="color:#fff;" href="index.html">NOBALK</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/login">Entrar</a>
+                    </li>
+                     <li>
+                        <a href="/signup">Cadastrar</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Header Carousel -->
+    <header id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="fill" style="background-image:url('/images/slide1.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Use Nobalk</h2>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('/images/slide2.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Em qualquer lugar</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Marketing Icons Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Bem vindo a Nobalk
+                </h1>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-check"></i> Facil de Usar</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>Nosso sistema foi projetado para o uso de forma mais simples e interativo possivel, então não se preocupe, você ira se acustumar mair rapido do que imagina.  </p>
+                        <a href="#" class="btn btn-default">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-gift"></i> Disponivel em qualquer lugar</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>Estando no seu notebook, tablet ou smartphone nao fara diferença, estaremos disponivel em qualquer plataforma de modo totalmente responsivo.</p>
+                        <a href="#" class="btn btn-default">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-compass"></i> Não perca nenhuma informação</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>Não se preocupe mais com milhares de pastas e arquivos, aqui tudo estara organizado desde o inicio para você, deixe o trabalho pesado com a gente.</p>
+                        <a href="#" class="btn btn-default">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Features Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Nossas Funcionalidades</h2>
+            </div>
+            <div class="col-md-6">
+                <p>O sistema Nobalk provem de varias ferramentas para ajudar no seu gerenciamento:</p>
+                <ul>
+                    <li>
+                      <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        Sistema de Empresas ativas
+                      </a>
+                      <div class="collapse" id="collapseExample">
+                        <div class="well">
+                          Sua empresa ativa definira toda a sua experiência dentro do sistema, pois todas as outras funcionalidades serao referenciadas a essa empresa, por exemplo: se minha empresa ativa atual for a Black Rainbow so ira aparecer na sessão de clientes os clientes da Black Rainbow.
+                        </div>
+                      </div>
+                    </li>
+                    <br>
+                    <li>
+                      <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap">
+                        Sistema de Mapas
+                      </a>
+                      <div class="collapse" id="collapseMap">
+                        <div class="well">
+                          Os mapas irão mostrar a localização de todos os seus clientes, basta adicionar seu endereço.
+                        </div>
+                      </div>
+                    </li>
+                    <br>
+                    <li>
+                      <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseCol" aria-expanded="false" aria-controls="collapseCol">
+                        Coleçoes por tabelas
+                      </a>
+                      <div class="collapse" id="collapseCol">
+                        <div class="well">
+                          Voce podera registrar coleçoes de modo organizado em tabelas, tendo as coleçoes seus devidos produtos.
+                        </div>
+                      </div>
+                    </li>
+                </ul>
+                <p>Todas as nossas outras funcionalidades e como elas funcionam estão definidas em nosso FAQ, e nunca hesite de entrar contato com a gente caso esteja com problemas!</p>
+            </div>
+            <div class="col-md-6">
+                <img class="img-responsive" src="/images/sistema.png" alt="">
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Call to Action Section -->
+        <div class="well">
+            <div class="row">
+                <div class="col-md-8">
+                    <p>Nunca hesite de entrar contato caso esteja com problemas, responderemos o mais rapido possivel!</p>
+                </div>
+                <div class="col-md-4">
+                    <a class="btn btn-lg btn-default btn-block" href="#">Entre em Contato</a>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Todos os direitos reservados &copy; Black Rainbow 2015 - Sinta a diferença</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+
+</body>
+
+
+</html>
+

@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   layout "formL", except: [:admin]
   
   def index
+    render :layout => false
   end
   
   def admin
