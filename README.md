@@ -2,9 +2,9 @@
 
 Time:
 
->Abhner Fellipe Gomes de Araújo(afga) - Analista de Sistema
+>Abhner Fellipe Gomes de Araújo(afga) - Gerente de Projeto
 
->Danilo Matheus de Oliveira Pedrosa(dmop) - Gerente de Projeto
+>Danilo Matheus de Oliveira Pedrosa(dmop) - Desenvolvedor Front-end
 
 >Ian Marino Lavenere Bastos Fireman(imlbf) - Líder de desenvolvimento
 
